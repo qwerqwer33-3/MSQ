@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { withBasePath } from "../lib/basePath";
+import members from "../data/members.json";
 
 const slides = [
   {
@@ -36,10 +37,103 @@ const slides = [
   }
 ];
 
+const focusGroups = [
+  {
+    key: "AI",
+    label: "AI",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="7" y="7" width="10" height="10" rx="2" fill="none" stroke="currentColor" strokeWidth="1.6" />
+        <path d="M12 3v4M12 17v4M3 12h4M17 12h4" fill="none" stroke="currentColor" strokeWidth="1.6" />
+        <circle cx="12" cy="12" r="2.2" fill="currentColor" />
+      </svg>
+    )
+  },
+  {
+    key: "Continuum",
+    label: "Continuum",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M3 8c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+        />
+        <path
+          d="M3 16c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+        />
+      </svg>
+    )
+  },
+  {
+    key: "Nucleation",
+    label: "Nucleation",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+        <circle cx="6" cy="8" r="1.5" fill="currentColor" />
+        <circle cx="18" cy="8" r="1.5" fill="currentColor" />
+        <circle cx="6" cy="16" r="1.5" fill="currentColor" />
+        <circle cx="18" cy="16" r="1.5" fill="currentColor" />
+      </svg>
+    )
+  }
+];
+
+const memberOrder = [
+  "Hyunwoo Kim",
+  "Hanwook Lee",
+  "Minseong Kang",
+  "Dongwon Jeon",
+  "Juhyun Ha",
+  "Jeu Shin",
+  "Jonghun Seo",
+  "Junhyuk Kang",
+  "Jihoon Hong",
+  "Jimin Kim",
+  "Jindong Hwang",
+  "Jaeseok Hwang",
+  "Seojun Moon",
+  "Seongjun Kim",
+  "Jaehwang Kim",
+  "Jaeseon Yoo"
+];
+
+const memberTags = {
+  "Hyunwoo Kim": ["DFT/MD", "Nucleation"],
+  "Hanwook Lee": ["DFT/MD", "AI"],
+  "Minseong Kang": ["DFT/MD", "Continuum", "Nucleation"],
+  "Dongwon Jeon": ["DFT/MD", "AI"],
+  "Juhyun Ha": ["AI"],
+  "Jeu Shin": ["DFT/MD", "Continuum"],
+  "Jonghun Seo": ["Continuum"],
+  "Junhyuk Kang": ["DFT/MD", "Continuum"],
+  "Jihoon Hong": ["DFT/MD", "AI"],
+  "Jimin Kim": ["DFT/MD", "Nucleation"],
+  "Jindong Hwang": ["DFT/MD", "AI", "Nucleation"],
+  "Jaeseok Hwang": ["Continuum"],
+  "Seojun Moon": ["DFT/MD", "Nucleation"],
+  "Seongjun Kim": ["DFT/MD", "Nucleation"],
+  "Jaehwang Kim": ["AI"],
+  "Jaeseon Yoo": ["DFT/MD", "Nucleation"]
+};
+
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [showWelcome, setShowWelcome] = useState(true);
+  const memberMap = new Map(members.map((member) => [member.name, member]));
+  const focusProfiles = focusGroups.map((group) => {
+    const people = memberOrder
+      .filter((name) => (memberTags[name] || []).includes(group.key))
+      .map((name) => memberMap.get(name))
+      .filter(Boolean);
+    return { ...group, people };
+  });
 
   const goPrev = () => {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
@@ -56,6 +150,28 @@ export default function HomePage() {
     }, 5000);
     return () => clearInterval(interval);
   }, [isPaused]);
+
+  useEffect(() => {
+    const elements = document.querySelectorAll(".reveal-on-scroll");
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((el) => el.classList.add("isVisible"));
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("isVisible");
+          } else {
+            entry.target.classList.remove("isVisible");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div>
@@ -156,6 +272,35 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+      <section className="section homeFocusSection">
+        <div className="sectionHeader reveal-on-scroll">
+          <h2>Research Focus</h2>
+          <p className="sectionDescription">Students aligned by methodology focus.</p>
+        </div>
+        <div className="homeFocusGrid">
+          {focusProfiles.map((group, index) => (
+            <div
+              className="homeFocusCard reveal-on-scroll"
+              key={group.key}
+              style={{ transitionDelay: `${index * 90}ms` }}
+            >
+              <div className="homeFocusHeader">
+                <span className="homeFocusIcon" aria-hidden="true">
+                  {group.icon}
+                </span>
+                <h3 className="homeFocusTitle">{group.label}</h3>
+              </div>
+              <div className="homeFocusAvatars">
+                {group.people.map((person) => (
+                  <div className="homeFocusAvatar" key={`${group.key}-${person.name}`}>
+                    <img src={withBasePath(person.photo)} alt={person.name} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>
