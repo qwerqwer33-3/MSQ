@@ -1,0 +1,14 @@
+[
+  {
+    "date": "2026-01-15",
+    "title": "Lab seminar",
+    "description": "Internal weekly seminar and discussion.",
+    "image": "/images/placeholder.svg"
+  },
+  {
+    "date": "2025-12-05",
+    "title": "Conference participation",
+    "description": "Presented recent research results.",
+    "image": "/images/placeholder.svg"
+  }
+]

@@ -1,0 +1,519 @@
+﻿[
+    {
+        "name":  "Hyunwoo Kim",
+        "category":  "Postdoc",
+        "role":  "Postdoctoral Researcher",
+        "affiliation":  "LAMP, Ajou University",
+        "email":  "khw93@ajou.ac.kr",
+        "photo":  "/images/members/hyunwoo_kim.jpg",
+        "education":  [
+                          "Ph.D., Materials Science and Engineering, Hanyang University (Advisor: Yongjae Jung)"
+                      ],
+        "research":  [
+                         "Functional semiconductor and display materials R\u0026D.",
+                         "Nuclear-generation simulation workflows."
+                     ],
+        "application":  "Semiconductor / Energy Materials",
+        "methodology":  [
+                            "Functional semiconductor and display materials R\u0026D.",
+                            "Nuclear-generation simulation workflows."
+                        ]
+    },
+    {
+        "name":  "Hanwook Lee",
+        "category":  "Ph.D.",
+        "role":  "Ph.D. Candidate",
+        "titleBadge":  "Lab Manager",
+        "affiliation":  "Energy Systems Research, Ajou University",
+        "email":  "lhu@ajou.ac.kr",
+        "photo":  "/images/members/hanwook_lee.jpg",
+        "education":  [
+                          "Ph.D. candidate, Energy Systems Research, Ajou University"
+                      ],
+        "research":  [
+                         "First-principles modeling for functional semiconductors and solid-state electrolytes.",
+                         "Machine-learning-driven molecular dynamics for nuclear generation."
+                     ],
+        "application":  "Semiconductor / Battery / Energy Materials",
+        "methodology":  [
+                            "First-principles modeling for functional semiconductors and solid-state electrolytes.",
+                            "Machine-learning-driven molecular dynamics for nuclear generation."
+                        ]
+    },
+    {
+        "name":  "Minseong Kang",
+        "category":  "Ph.D.",
+        "role":  "Ph.D. Candidate",
+        "affiliation":  "Energy Systems Research, Ajou University",
+        "email":  "kkkb2573@ajou.ac.kr",
+        "photo":  "/images/members/minseong_kang.png",
+        "education":  [
+                          "Ph.D. candidate, Energy Systems Research, Ajou University"
+                      ],
+        "research":  [
+                         "Energy harvester, semiconductor device, and battery process simulations.",
+                         "Multiscale nuclear-generation simulation."
+                     ],
+        "application":  "Semiconductor / Battery / Energy Materials",
+        "methodology":  [
+                            "Energy harvester, semiconductor device, and battery process simulations.",
+                            "Multiscale nuclear-generation simulation."
+                        ]
+    },
+    {
+        "name":  "Dongwon Jeon",
+        "category":  "Ph.D.",
+        "role":  "Ph.D. Candidate",
+        "affiliation":  "Energy Systems Research, Ajou University",
+        "email":  "jdwjyl2007@ajou.ac.kr",
+        "photo":  "/images/members/dongwon_jeon.jpg",
+        "education":  [
+                          "Ph.D. candidate, Energy Systems Research, Ajou University",
+                          "B.S., Advanced Materials Science and Engineering, Ajou University"
+                      ],
+        "research":  [
+                         "Solid-state electrolyte batteries and electronic materials simulations.",
+                         "NLP-based synthesis workflow text mining."
+                     ],
+        "application":  "Semiconductor / Battery",
+        "methodology":  [
+                            "Solid-state electrolyte batteries and electronic materials simulations.",
+                            "NLP-based synthesis workflow text mining."
+                        ]
+    },
+    {
+        "name":  "Juhyun Ha",
+        "category":  "Integrated Ph.D.",
+        "role":  "Integrated Ph.D. Candidate",
+        "affiliation":  "Energy Systems Research, Ajou University",
+        "email":  "hajujuha@ajou.ac.kr",
+        "photo":  "/images/members/juhyun_ha.png",
+        "education":  [
+                          "Integrated Ph.D. candidate, Energy Systems Research, Ajou University",
+                          "B.S., Materials Systems Engineering, Pukyong National University"
+                      ],
+        "research":  [
+                         "NLP-based literature mining.",
+                         "ALD process prediction."
+                     ],
+        "application":  "Semiconductor",
+        "methodology":  [
+                            "NLP-based literature mining.",
+                            "ALD process prediction."
+                        ]
+    },
+    {
+        "name":  "Jeu Shin",
+        "category":  "Integrated Ph.D.",
+        "role":  "Integrated Ph.D. Candidate",
+        "affiliation":  "Energy Systems Research, Ajou University",
+        "email":  "jshin01@ajou.ac.kr",
+        "website":  "https://qwerqwer33-3.github.io/J.Shin/#/",
+        "photo":  "/images/members/jeu_shin.jpg",
+        "education":  [
+                          "2026.03 - Present: Integrated Ph.D. candidate, Energy Systems Research, Ajou University",
+                          "2020.03 - 2024.08: B.S., Mechanical Engineering, Hanbat National University"
+                      ],
+        "research":  [
+                         "Finite element analysis of battery materials and processes.",
+                         "First-principles calculations for battery material research.",
+                         "Multiscale workflows for battery manufacturing."
+                     ],
+        "application":  "Battery",
+        "methodology":  [
+                            "Finite element analysis of battery materials and processes.",
+                            "First-principles calculations for battery material research.",
+                            "Multiscale workflows for battery manufacturing."
+                        ]
+    },
+    {
+        "name":  "Jonghun Seo",
+        "category":  "Integrated Ph.D.",
+        "role":  "Integrated Ph.D. Candidate",
+        "affiliation":  "Energy Systems Research, Ajou University",
+        "email":  "sjh99@ajou.ac.kr",
+        "photo":  "/images/members/jonghun_seo.png",
+        "education":  [
+                          "Integrated Ph.D. candidate, Energy Systems Research, Ajou University",
+                          "B.S., Materials Science and Engineering, Kumoh National Institute of Technology"
+                      ],
+        "research":  [
+                         "Semiconductor device simulations."
+                     ],
+        "application":  "Semiconductor",
+        "methodology":  [
+                            "Semiconductor device simulations."
+                        ]
+    },
+    {
+        "name":  "Junhyuk Kang",
+        "category":  "Masters",
+        "role":  "M.S. Candidate",
+        "affiliation":  "Energy Systems Research, Ajou University",
+        "email":  "rkdwnsgur1@ajou.ac.kr",
+        "photo":  "/images/members/junhyuk_kang.jpg",
+        "education":  [
+                          "M.S. candidate, Advanced Materials Science and Engineering, Ajou University",
+                          "B.S., Advanced Materials Science and Engineering, Ajou University"
+                      ],
+        "research":  [
+                         "Solid-state electrolyte battery and semiconductor device simulations."
+                     ],
+        "application":  "Semiconductor / Battery",
+        "methodology":  [
+                            "Solid-state electrolyte battery and semiconductor device simulations."
+                        ]
+    },
+    {
+        "name":  "Jihoon Hong",
+        "category":  "Masters",
+        "role":  "M.S. Candidate",
+        "affiliation":  "Energy Systems Research, Ajou University",
+        "email":  "blueper2000@ajou.ac.kr",
+        "photo":  "/images/members/jihoon_hong.jpg",
+        "education":  [
+                          "M.S. candidate, Energy Systems Research, Ajou University",
+                          "B.S., Advanced Materials Science and Engineering, Ajou University"
+                      ],
+        "research":  [
+                         "Oxide semiconductor modeling.",
+                         "Natural language-based literature learning."
+                     ],
+        "application":  "Semiconductor",
+        "methodology":  [
+                            "Oxide semiconductor modeling.",
+                            "Natural language-based literature learning."
+                        ]
+    },
+    {
+        "name":  "Jimin Kim",
+        "category":  "Masters",
+        "role":  "M.S. Candidate",
+        "affiliation":  "Energy Systems Research, Ajou University",
+        "email":  "kjmkjm7230@ajou.ac.kr",
+        "photo":  "/images/members/jimin_kim.png",
+        "education":  [
+                          "M.S. candidate, Energy Systems Research, Ajou University",
+                          "B.S., Advanced Materials Science and Engineering, Ajou University"
+                      ],
+        "research":  [
+                         "First-principles and molecular dynamics-based nuclear generation research.",
+                         "Ferroelectric materials for semiconductors."
+                     ],
+        "application":  "Semiconductor / Energy Materials",
+        "methodology":  [
+                            "First-principles and molecular dynamics-based nuclear generation research.",
+                            "Ferroelectric materials for semiconductors."
+                        ]
+    },
+    {
+        "name":  "Jindong Hwang",
+        "category":  "Masters",
+        "role":  "M.S. Candidate",
+        "affiliation":  "AI and Advanced Materials Science, Ajou University",
+        "email":  "wlsehd949@ajou.ac.kr",
+        "photo":  "/images/members/jindong_hwang.png",
+        "education":  [
+                          "M.S. candidate, Artificial Intelligence, Ajou University",
+                          "B.S., Advanced Materials Science and Engineering, Ajou University"
+                      ],
+        "research":  [
+                         "Battery material modeling with first-principles and molecular dynamics.",
+                         "Ferroelectric research using NLP."
+                     ],
+        "application":  "Semiconductor / Battery",
+        "methodology":  [
+                            "Battery material modeling with first-principles and molecular dynamics.",
+                            "Ferroelectric research using NLP."
+                        ]
+    },
+    {
+        "name":  "Jaeseok Hwang",
+        "category":  "Undergrad",
+        "role":  "Undergraduate Research Intern",
+        "affiliation":  "Advanced Materials Science and Engineering, Ajou University",
+        "email":  "issac2002@ajou.ac.kr",
+        "photo":  "/images/members/jaeseok_hwang.png",
+        "education":  [
+                          "B.S. candidate, Advanced Materials Science and Engineering, Ajou University"
+                      ],
+        "research":  [
+                         "First-principles and molecular dynamics for nuclear generation research.",
+                         "NLP for materials science."
+                     ],
+        "application":  "Energy Materials",
+        "methodology":  [
+                            "First-principles and molecular dynamics for nuclear generation research.",
+                            "NLP for materials science."
+                        ]
+    },
+    {
+        "name":  "Seojun Moon",
+        "category":  "Undergrad",
+        "role":  "Undergraduate Research Intern",
+        "affiliation":  "Advanced Materials Science and Engineering, Ajou University",
+        "email":  "intellmoon@ajou.ac.kr",
+        "photo":  "/images/members/seojun_moon.png",
+        "education":  [
+                          "B.S. candidate, Advanced Materials Science and Engineering, Ajou University"
+                      ],
+        "research":  [
+                         "First-principles and molecular dynamics for nuclear generation."
+                     ],
+        "application":  "Energy Materials",
+        "methodology":  [
+                            "First-principles and molecular dynamics for nuclear generation."
+                        ]
+    },
+    {
+        "name":  "Seongjun Kim",
+        "category":  "Undergrad",
+        "role":  "Undergraduate Research Intern",
+        "affiliation":  "Advanced Materials Science and Engineering, Ajou University",
+        "email":  "kimsj1017@ajou.ac.kr",
+        "photo":  "/images/members/seongjun_kim.jpg",
+        "education":  [
+                          "B.S. candidate, Advanced Materials Science and Engineering, Ajou University"
+                      ],
+        "research":  [
+                         "First-principles calculations for interconnect materials."
+                     ],
+        "application":  "Semiconductor",
+        "methodology":  [
+                            "First-principles calculations for interconnect materials."
+                        ]
+    },
+    {
+        "name":  "Jaehwang Kim",
+        "category":  "Undergrad",
+        "role":  "Undergraduate Research Intern",
+        "affiliation":  "Advanced Materials Science and Engineering, Ajou University",
+        "email":  "jaehwang3183@ajou.ac.kr",
+        "photo":  "/images/members/jaehwang_kim.png",
+        "education":  [
+                          "B.S. candidate, Advanced Materials Science and Engineering, Ajou University"
+                      ],
+        "research":  [
+                         "NLP for materials science."
+                     ],
+        "application":  "Energy Materials",
+        "methodology":  [
+                            "NLP for materials science."
+                        ]
+    },
+    {
+        "name":  "Jaeseon Yoo",
+        "category":  "Undergrad",
+        "role":  "Undergraduate Research Intern",
+        "affiliation":  "Advanced Materials Science and Engineering, Ajou University",
+        "email":  "aasdfp00372@ajou.ac.kr",
+        "photo":  "/images/members/jaeseon_yoo.png",
+        "education":  [
+                          "B.S. candidate, Advanced Materials Science and Engineering, Ajou University"
+                      ],
+        "research":  [
+                         "First-principles calculations for interconnect materials."
+                     ],
+        "application":  "Semiconductor",
+        "methodology":  [
+                            "First-principles calculations for interconnect materials."
+                        ]
+    },
+    {
+        "name":  "Hyunseok Ko",
+        "category":  "Alumni",
+        "role":  "Senior Researcher",
+        "affiliation":  "KICET",
+        "currentAffiliation":  "KICET (Senior Researcher)",
+        "email":  "hko@kicet.re.kr",
+        "photo":  "/images/members/hyunseok_ko.jpg",
+        "education":  [
+                          "Ph.D., Materials Science and Engineering, University of Wisconsin-Madison (Advisor: Dane Morgan)"
+                      ],
+        "research":  [
+                         "Energy harvester and ceramic big data research."
+                     ],
+        "application":  "Energy harvester and ceramic big data research",
+        "methodology":  [
+                            "Energy harvester and ceramic big data research."
+                        ]
+    },
+    {
+        "name":  "Giulio Fatti",
+        "category":  "Alumni",
+        "role":  "Researcher",
+        "affiliation":  "Imperial College London",
+        "currentAffiliation":  "Imperial College London",
+        "email":  "gfatti@kicet.re.kr",
+        "photo":  "/images/members/giulio_fatti.png",
+        "education":  [
+                          "Ph.D., Physics, University of Modena and Reggio Emilia (Advisor: Maria Clelia Righi)"
+                      ],
+        "research":  [
+                         "Energy harvester and materials design research.",
+                         "MSCA-IF (Marie Sklodowska-Curie Individual Fellowships)"
+                     ],
+        "application":  "Energy harvester and materials design research",
+        "methodology":  [
+                            "Energy harvester and materials design research.",
+                            "MSCA-IF (Marie Sklodowska-Curie Individual Fellowships)"
+                        ]
+    },
+    {
+        "name":  "Upendra Kumar",
+        "category":  "Alumni",
+        "role":  "Researcher",
+        "affiliation":  "Institute of Physics, Belgrade, Serbia",
+        "currentAffiliation":  "Senior Research Associate, Institute of Physics, Belgrade, Serbia",
+        "email":  "upendrakumar@kicet.re.kr",
+        "photo":  "/images/members/upendra_kumar.png",
+        "education":  [
+                          "Ph.D., Physics, Indian Institute of Technology Guwahati (Advisor: S. Setlur)"
+                      ],
+        "research":  [
+                         "Smart factory and materials design research."
+                     ],
+        "application":  "Smart factory and materials design research",
+        "methodology":  [
+                            "Smart factory and materials design research."
+                        ]
+    },
+    {
+        "name":  "Donggeon Lee",
+        "category":  "Alumni",
+        "role":  "Researcher",
+        "affiliation":  "Mecaro",
+        "currentAffiliation":  "Mecaro",
+        "email":  "dlehdrjs9100@gmail.com",
+        "photo":  "/images/members/donggeon_lee.png",
+        "education":  [
+                          "M.S., Materials Science and Engineering, Hanyang University (Advisor: Wonbin Lim)"
+                      ],
+        "research":  [
+                         "First-principles-based optoelectronic materials design simulations."
+                     ],
+        "application":  "First-principles-based optoelectronic materials design simulations",
+        "methodology":  [
+                            "First-principles-based optoelectronic materials design simulations."
+                        ]
+    },
+    {
+        "name":  "Sangmin Jeong",
+        "category":  "Alumni",
+        "role":  "Researcher",
+        "affiliation":  "ASML",
+        "currentAffiliation":  "ASML",
+        "email":  "10004oksm@kicet.re.kr",
+        "photo":  "/images/members/sangmin_jeong.jpg",
+        "education":  [
+                          "M.S., Physics, Hanyang University (Advisor: Junhyung Cho)"
+                      ],
+        "research":  [
+                         "Manufacturing big data research and industry-support projects."
+                     ],
+        "application":  "Manufacturing big data research and industry-support projects",
+        "methodology":  [
+                            "Manufacturing big data research and industry-support projects."
+                        ]
+    },
+    {
+        "name":  "Sanggu Lee",
+        "category":  "Alumni",
+        "role":  "Researcher",
+        "affiliation":  "Self-employed cryptocurrency trader",
+        "currentAffiliation":  "Self-employed cryptocurrency trader",
+        "email":  "tkdrn0510@kicet.re.kr",
+        "photo":  "/images/members/sanggu_lee.jpg",
+        "education":  [
+                          "B.S., Materials Science and Engineering, Yeungnam University"
+                      ],
+        "research":  [
+                         "Data-driven ceramics and semiconductor simulations."
+                     ],
+        "application":  "Data-driven ceramics and semiconductor simulations",
+        "methodology":  [
+                            "Data-driven ceramics and semiconductor simulations."
+                        ]
+    },
+    {
+        "name":  "Yujeong Park",
+        "category":  "Alumni",
+        "role":  "Researcher",
+        "affiliation":  "Volvo Korea",
+        "currentAffiliation":  "Volvo Korea",
+        "email":  "qkfdbwjd2004@naver.com",
+        "photo":  "/images/members/yujeong_park.png",
+        "education":  [
+                          "B.S., Electronic IT, Mechanical, and Automotive Engineering, Inje University"
+                      ],
+        "research":  [
+                         "Semiconductor deposition and manufacturing data research."
+                     ],
+        "application":  "Semiconductor deposition and manufacturing data research",
+        "methodology":  [
+                            "Semiconductor deposition and manufacturing data research."
+                        ]
+    },
+    {
+        "name":  "Woongchan Kim",
+        "category":  "Alumni",
+        "role":  "Researcher",
+        "affiliation":  "Applied Materials",
+        "currentAffiliation":  "Applied Materials",
+        "email":  "mongchan2@ajou.ac.kr",
+        "photo":  "/images/members/woongchan_kim.png",
+        "education":  [
+                          "M.S., Energy Systems Engineering, Ajou University",
+                          "B.S., Advanced Materials Science and Engineering and Software, Ajou University"
+                      ],
+        "research":  [
+                         "Machine-learning-based materials synthesizability prediction and semiconductor materials modeling."
+                     ],
+        "application":  "Machine-learning-based materials synthesizability prediction and semiconductor materials modeling",
+        "methodology":  [
+                            "Machine-learning-based materials synthesizability prediction and semiconductor materials modeling."
+                        ]
+    },
+    {
+        "name":  "Suyeon Jang",
+        "category":  "Alumni",
+        "role":  "Researcher",
+        "affiliation":  "Konkuk University",
+        "currentAffiliation":  "Konkuk University",
+        "email":  "suyeon2002@konkuk.ac.kr",
+        "photo":  "/images/members/suyeon_jang.jpg",
+        "education":  [
+                          "B.S., Chemical Engineering, Konkuk University"
+                      ],
+        "research":  [
+                         "Semiconductor solid-solution modeling and battery electrolyte modeling.",
+                         "Thermodynamic-data-driven reaction pathway search."
+                     ],
+        "application":  "Semiconductor solid-solution modeling and battery electrolyte modeling",
+        "methodology":  [
+                            "Semiconductor solid-solution modeling and battery electrolyte modeling.",
+                            "Thermodynamic-data-driven reaction pathway search."
+                        ]
+    },
+    {
+        "name":  "Gihwan Kim",
+        "category":  "Alumni",
+        "role":  "Researcher",
+        "affiliation":  "Military service",
+        "currentAffiliation":  "Military service",
+        "email":  "kghkai1807@ajou.ac.kr",
+        "photo":  "/images/members/gihwan_kim.png",
+        "education":  [
+                          "B.S. candidate, Advanced Materials Science and Engineering, Ajou University (double major in Software)"
+                      ],
+        "research":  [
+                         "Nucleation research using first-principles and molecular dynamics.",
+                         "Materials science research using natural language processing."
+                     ],
+        "application":  "Nucleation research using first-principles and molecular dynamics",
+        "methodology":  [
+                            "Nucleation research using first-principles and molecular dynamics.",
+                            "Materials science research using natural language processing."
+                        ]
+    }
+]
