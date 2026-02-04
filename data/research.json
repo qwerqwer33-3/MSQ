@@ -2,31 +2,31 @@
   {
     "title": "Multiscale & Multiphysics Modeling",
     "slug": "multiscale-multiphysics",
-    "image": "/images/research/multiscale-multiphysics.png",
+    "image": "/images/Research/multiscale-multiphysics.png",
     "description": "We integrate DFT, FEM, and machine learning to connect microstructure, device physics, and process conditions across scales. Our models capture coupled thermal, mechanical, electrochemical, and electrical behavior to guide design and reliability."
   },
   {
     "title": "Nucleation Theory",
     "slug": "nucleation-theory",
-    "image": "/images/research/nucleation-theory.png",
+    "image": "/images/Research/nucleation-theory.png",
     "description": "We develop classical and non-classical nucleation frameworks to explain phase selection, crystallinity, and growth kinetics. The goal is to predict metastability windows and control crystallization under real processing conditions."
   },
   {
     "title": "AI-assisted Synthesis Recipes",
     "slug": "ai-assisted-synthesis-recipes",
-    "image": "/images/research/ai-synthesis-recipes.png",
+    "image": "/images/Research/ai-synthesis-recipes.png",
     "description": "We curate literature, experiments, and simulation data to build AI-driven synthesis recipes. By combining LLM-based knowledge extraction with data-driven optimization, we bridge theory to lab implementation."
   },
   {
     "title": "Semiconductor Materials and Processing",
     "slug": "semiconductor-materials-processing",
-    "image": "/images/research/semiconductor-materials.png",
+    "image": "/images/Research/semiconductor-materials.png",
     "description": "We study alloys, doping, interfaces, and epitaxy to tune electronic structure and device performance. Modeling spans defect physics, transport, and process-structure-property relationships for next-generation semiconductors."
   },
   {
     "title": "Battery Materials and Processing",
     "slug": "battery-materials-processing",
-    "image": "/images/research/battery-materials.png",
+    "image": "/images/Research/battery-materials.png",
     "description": "We model solid electrolytes and electrode materials, linking chemistry, mechanics, and transport. We also design wet and dry electrode processing and sintering routes to improve performance and safety."
   }
 ]
