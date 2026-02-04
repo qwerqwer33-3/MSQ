@@ -27,7 +27,9 @@ export default function ResearchDetailPage({ params }) {
       <section className="section">
         <div className="sectionHeader">
           <p className="sectionDescription">
-            <a className="researchBackLink" href={withBasePath("/research")}>??Back to Topics</a>
+            <a className="researchBackLink" href={withBasePath("/research")}>
+              {"\u2190 Back to Topics"}
+            </a>
           </p>
           <h1>{topic.title}</h1>
           <p className="sectionDescription">{topic.description}</p>
