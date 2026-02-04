@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import members from "../../data/members.json";
-import pubs from "../../data/publications.json";
 import Card from "../../components/Card";
 import { withBasePath } from "../../lib/basePath";
 
@@ -50,7 +49,7 @@ export default function MembersPage() {
                   (m.education && m.education.length) ||
                   hasMethodology;
                 const scholarUrl =
-                  m.scholar_url || m.scholar || m.google_scholar || pubs.google_scholar_url;
+                  m.scholar_url || m.scholar || m.google_scholar;
 
                 return (
                   <Card
@@ -62,21 +61,36 @@ export default function MembersPage() {
                         {m.titleBadge ? ` (${m.titleBadge})` : ""}
                       </div>
                       <div className="memberWebsite">
-                        <a
-                          className="memberScholarLink"
-                          href={scholarUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          aria-label="Open Google Scholar"
-                          title="Open Google Scholar"
-                        >
-                          <span className="scholarBadge" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-                              <path d="M12 4.6 3.2 8.7 12 12.8 20.8 8.7 12 4.6z" />
-                              <path d="M6.1 12.1v3.4c0 1.2 2.7 2.2 5.9 2.2s5.9-1 5.9-2.2v-3.4l-5.9 2.9-5.9-2.9z" />
-                            </svg>
+                        {scholarUrl ? (
+                          <a
+                            className="memberScholarLink"
+                            href={scholarUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label="Open Google Scholar"
+                            title="Open Google Scholar"
+                          >
+                            <span className="scholarBadge" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                                <path d="M12 4.6 3.2 8.7 12 12.8 20.8 8.7 12 4.6z" />
+                                <path d="M6.1 12.1v3.4c0 1.2 2.7 2.2 5.9 2.2s5.9-1 5.9-2.2v-3.4l-5.9 2.9-5.9-2.9z" />
+                              </svg>
+                            </span>
+                          </a>
+                        ) : (
+                          <span
+                            className="memberScholarLink memberScholarLink--disabled"
+                            aria-label="Google Scholar not available"
+                            title="Google Scholar not available"
+                          >
+                            <span className="scholarBadge" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                                <path d="M12 4.6 3.2 8.7 12 12.8 20.8 8.7 12 4.6z" />
+                                <path d="M6.1 12.1v3.4c0 1.2 2.7 2.2 5.9 2.2s5.9-1 5.9-2.2v-3.4l-5.9 2.9-5.9-2.9z" />
+                              </svg>
+                            </span>
                           </span>
-                        </a>
+                        )}
                         {m.website ? (
                           <a
                             className="memberHomeLink"
