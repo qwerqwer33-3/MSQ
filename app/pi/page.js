@@ -23,6 +23,18 @@ function splitTimeline(entry) {
 export default function PIPage() {
   const educationEntries = pi.education.filter(isEducationEntry);
   const professionalEntries = pi.education.filter((entry) => !isEducationEntry(entry));
+  const signatureLeadIndex = pi.message ? pi.message.length - 2 : -1;
+  const signatureNameIndex = pi.message ? pi.message.length - 1 : -1;
+
+  const renderWithBold = (text) => {
+    const parts = text.split("**");
+    if (parts.length === 1) {
+      return text;
+    }
+    return parts.map((part, index) =>
+      index % 2 === 1 ? <strong key={`${part}-${index}`}>{part}</strong> : part
+    );
+  };
 
   return (
     <div>
@@ -115,8 +127,19 @@ export default function PIPage() {
         </div>
         {pi.message && pi.message.length ? (
           <div className="piMessage">
-            {pi.message.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+            {pi.message.map((paragraph, index) => (
+              <p
+                key={paragraph}
+                className={
+                  index === signatureLeadIndex
+                    ? "piSignatureLead"
+                    : index === signatureNameIndex
+                      ? "piSignatureName"
+                      : undefined
+                }
+              >
+                {renderWithBold(paragraph)}
+              </p>
             ))}
           </div>
         ) : null}

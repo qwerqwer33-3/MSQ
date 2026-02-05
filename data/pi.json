@@ -24,9 +24,10 @@
   ],
   "message": [
     "Hello.",
-    "I lead the M2 (Materials Modeling) research team at Ajou University.",
-    "Our group merges first-principles calculations, finite element analysis (thermal, structural, chemical, etc.), and machine learning to study a broad spectrum of materials and processes in electronics and energy.",
+    "I lead the **M2 (Materials Modeling) research team** at Ajou University.",
+    "Our group merges **first-principles calculations**, **finite element analysis** (thermal, structural, chemical, etc.), and **machine learning** to study a broad spectrum of materials and processes in electronics and energy.",
     "We will do our utmost to ensure the M2 research benefits universities, research centers, and industry alike.",
-    "Sincerely, Sung Beom Cho"
+    "Sincerely,",
+    "Sung Beom Cho"
   ]
 }

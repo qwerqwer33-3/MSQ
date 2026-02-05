@@ -514,7 +514,9 @@ h2{font-size:28px;margin:10px 0 12px;}
 }
 .piMessage{margin-top:24px;padding:22px;background:var(--panel);border:1px solid rgba(37,99,235,0.15);border-radius:18px;box-shadow:0 10px 24px rgba(15,23,42,0.08);}
 .piMessage p{margin:0 0 12px;line-height:1.6;color:var(--text);}
-.piMessage p:last-child{margin-bottom:0;font-weight:600;}
+.piMessage p:last-child{margin-bottom:0;}
+.piSignatureLead{margin-top:18px;font-weight:600;}
+.piSignatureName{margin-top:2px;font-weight:700;}
 .memberCardContent{--member-photo-width:180px;--member-gap:24px;--member-row-gap:12px;display:grid;grid-template-columns:var(--member-photo-width) 1fr;column-gap:var(--member-gap);row-gap:var(--member-row-gap);align-items:flex-start;margin-top:16px;}
 .memberCardContent--details .memberPhoto{grid-row:1 / 2;}
 .memberCardContent--details .memberInfo{grid-column:2 / 3;grid-row:1 / 2;}
