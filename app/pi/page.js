@@ -3,7 +3,10 @@ import Card from "../../components/Card";
 import { withBasePath } from "../../lib/basePath";
 
 function isEducationEntry(entry) {
-  return /B\.S\.|M\.S\.|Ph\.D\.|PhD|Master|Bachelor|Doctor/i.test(entry);
+  if (/Postdoctoral/i.test(entry)) {
+    return false;
+  }
+  return /B\.S\.|M\.S\.|Ph\.D\.|PhD|Master|Bachelor|Doctorate|Doctoral/i.test(entry);
 }
 
 function splitTimeline(entry) {
@@ -72,6 +75,25 @@ export default function PIPage() {
                         <span>{pi.phone}</span>
                       </div>
                     ) : null}
+                    {pi.scholar_url ? (
+                      <div className="piContactIconRow">
+                        <a
+                          className="piScholarLink"
+                          href={pi.scholar_url}
+                          target="_blank"
+                          rel="noreferrer"
+                          aria-label="Open Google Scholar"
+                          title="Open Google Scholar"
+                        >
+                          <span className="scholarBadge" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                              <path d="M12 4.6 3.2 8.7 12 12.8 20.8 8.7 12 4.6z" />
+                              <path d="M6.1 12.1v3.4c0 1.2 2.7 2.2 5.9 2.2s5.9-1 5.9-2.2v-3.4l-5.9 2.9-5.9-2.9z" />
+                            </svg>
+                          </span>
+                        </a>
+                      </div>
+                    ) : null}
                   </div>
                 </div>
               </div>
@@ -105,7 +127,15 @@ export default function PIPage() {
                     })}
                   </ul>
                 </div>
-                <div className="piSection">
+              </div>
+            </Card>
+          </div>
+        </div>
+        {pi.awards && pi.awards.length ? (
+          <div className="grid piAwardsGrid">
+            <div className="piCardWrapper">
+              <Card>
+                <div className="piAwardsBlock">
                   <div className="piSectionTitle">Awards</div>
                   <ul className="piAwardsList">
                     {pi.awards.map((entry) => {
@@ -121,10 +151,10 @@ export default function PIPage() {
                     })}
                   </ul>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </div>
           </div>
-        </div>
+        ) : null}
         {pi.message && pi.message.length ? (
           <div className="piMessage">
             {pi.message.map((paragraph, index) => (
