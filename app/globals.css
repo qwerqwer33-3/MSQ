@@ -377,36 +377,111 @@ h2{font-size:28px;margin:10px 0 12px;}
 .membersGrid--twoCol{grid-template-columns:repeat(2, minmax(0, 1fr));}
 .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px;box-shadow:0 6px 16px rgba(15,23,42,0.08);position:relative;}
 .piProfileTop{display:flex;flex-direction:column;align-items:center;gap:12px;margin-top:6px;}
-.piPhoto{width:220px;max-width:100%;}
+.piPhoto{width:240px;max-width:100%;}
 .piPhoto img{width:100%;height:auto;border-radius:12px;border:1px solid var(--border);display:block;object-fit:cover;}
 .piContact{margin-top:0;}
 .piListGroup{margin-top:18px;display:flex;flex-direction:column;gap:18px;}
-.piBio{font-size:1.2rem;}
-.piListGroup strong{
-  font-size:1.1rem;
+.piBio{
+  font-size:1.05rem;
+  line-height:1.8;
+  color:#0b1220;
+  margin-top:16px;
+}
+.piHeader{
+  display:grid;
+  grid-template-columns:240px 1fr;
+  gap:28px;
+  align-items:start;
+}
+.piHeaderInfo{display:flex;flex-direction:column;gap:6px;}
+.piName{margin:0;font-size:2rem;font-weight:700;color:#1d4ed8;letter-spacing:0.01em;}
+.piName::after{content:none;}
+.piTitleRole{font-size:1.05rem;font-weight:700;color:#0f172a;}
+.piTitleAffiliation{font-size:1.02rem;font-weight:600;color:#1f2937;}
+.piContactBlock{display:flex;flex-direction:column;gap:8px;margin-top:12px;}
+.piContactLine{display:grid;grid-template-columns:78px 1fr;gap:10px;color:#0f172a;font-size:1rem;align-items:start;}
+.piContactLabel{font-weight:700;color:#1f2937;}
+.piContactLine a{color:var(--brand);text-decoration:underline;text-underline-offset:2px;}
+.piSectionStack{display:grid;gap:18px;margin-top:20px;}
+.piSection{
+  padding:16px 18px;
+  border-radius:16px;
+  border:1px solid rgba(15,23,42,0.1);
+  background:rgba(248,250,252,0.9);
+}
+.piSectionTitle{
+  font-size:0.85rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:#1f2937;
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.piSectionTitle::after{
+  content:"";
+  flex:1 1 auto;
+  height:1px;
+  background:rgba(15,23,42,0.12);
+}
+.piTimeline{margin:0;padding:0;list-style:none;display:grid;gap:12px;}
+.piTimelineItem{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:start;}
+.piTimelineDate{
+  display:block;
+  width:100%;
   font-weight:600;
-  color:var(--text);
-  letter-spacing:0;
-  text-transform:none;
-  margin-bottom:6px;
+  color:#334155;
+  white-space:nowrap;
+  font-size:0.98rem;
+  font-variant-numeric:tabular-nums;
+}
+.piTimelineDate.isRange{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  column-gap:6px;
+  align-items:baseline;
+}
+.piDateSingle{white-space:nowrap;}
+.piDateStart{white-space:nowrap;}
+.piDateSep{color:#94a3b8;justify-self:center;}
+.piDateEnd{text-align:right;white-space:nowrap;justify-self:end;}
+.piTimelineText{color:#0f172a;line-height:1.6;font-size:0.98rem;}
+.piAwardsList{margin:0;padding:0;display:grid;gap:10px;list-style:none;}
+.piAwardsItem{display:grid;grid-template-columns:110px 1fr;column-gap:18px;align-items:start;}
+.piAwardsDate{font-weight:600;color:#334155;white-space:nowrap;font-variant-numeric:tabular-nums;font-size:0.98rem;}
+.piAwardsText{color:#0f172a;line-height:1.6;font-size:0.98rem;}
+.piListGroup strong{
+  font-size:0.9rem;
+  font-weight:700;
+  color:#1f2937;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  margin-bottom:8px;
   display:block;
 }
 .piListGroup .bioList{margin-top:6px;}
 .piListGroup .bioList li{
-  font-size:0.95rem;
+  font-size:1rem;
+  line-height:1.7;
 }
 .piContactBlock .bioList li{
-  font-size:0.95rem;
+  font-size:1rem;
+  line-height:1.7;
 }
 .piCardWrapper .cardTitle{
-  font-size:1.3rem;
-  font-weight:600;
+  font-size:1.6rem;
+  font-weight:700;
+  letter-spacing:0.01em;
   margin-bottom:6px;
 }
 .piCardWrapper .cardMeta{
-  font-size:1rem;
-  font-weight:500;
+  font-size:1.05rem;
+  font-weight:600;
+  color:#1f2937;
 }
+.piCardWrapper{width:100%;}
 .contactPage h1{
   font-family:"Pretendard",ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
   font-size:1rem;
@@ -644,6 +719,11 @@ nextjs-portal{display:none!important;}
   .footerGrid{grid-template-columns:1fr;}
   .homeFocusGrid{grid-template-columns:repeat(2, minmax(0, 1fr));}
   .homeFocusAvatar{width:90px;height:90px;}
+  .piHeader{grid-template-columns:1fr;}
+  .piTimelineItem{grid-template-columns:1fr;gap:6px;}
+  .piContactLine{grid-template-columns:1fr;gap:4px;}
+  .piAwardsItem{grid-template-columns:1fr;gap:6px;}
+  .piTimelineItem{grid-template-columns:1fr;gap:6px;}
 }
 @media (max-width: 560px){
   .homeFocusGrid{grid-template-columns:1fr;}

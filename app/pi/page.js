@@ -2,7 +2,28 @@ import pi from "../../data/pi.json";
 import Card from "../../components/Card";
 import { withBasePath } from "../../lib/basePath";
 
+function isEducationEntry(entry) {
+  return /B\.S\.|M\.S\.|Ph\.D\.|PhD|Master|Bachelor|Doctor/i.test(entry);
+}
+
+function splitTimeline(entry) {
+  const parts = entry.split(" - ");
+  if (parts.length === 1) {
+    return { date: "", text: entry };
+  }
+  if (parts.length === 2) {
+    return { date: parts[0], text: parts[1] };
+  }
+  return {
+    date: `${parts[0]} - ${parts[1]}`,
+    text: parts.slice(2).join(" - ")
+  };
+}
+
 export default function PIPage() {
+  const educationEntries = pi.education.filter(isEducationEntry);
+  const professionalEntries = pi.education.filter((entry) => !isEducationEntry(entry));
+
   return (
     <div>
       <section className="section">
@@ -12,45 +33,80 @@ export default function PIPage() {
       <section className="section">
         <div className="grid">
           <div className="piCardWrapper">
-            <Card title={pi.name} meta={`${pi.title} - ${pi.affiliation}`}>
-              <div className="piProfileTop">
+            <Card>
+              <div className="piHeader">
                 <div className="piPhoto">
                   <img src={withBasePath(pi.photo)} alt={pi.name} />
                 </div>
-              </div>
-              {pi.bio ? (
-                <p className="lead piBio" style={{ marginTop: 12 }}>
-                  {pi.bio}
-                </p>
-              ) : null}
-              <div className="piListGroup">
-                <div className="piContactBlock">
-                  <strong>Contact</strong>
-                  <ul className="bioList">
-                    <li>
-                      <span>Email: </span>
-                      <span>{pi.email}</span>
-                    </li>
-                    <li>
-                      <span>Office: </span>
+                <div className="piHeaderInfo">
+                  <h2 className="piName">{pi.name}</h2>
+                  <div className="piTitleRole">{pi.title}</div>
+                  <div className="piTitleAffiliation">{pi.affiliation}</div>
+                  <div className="piContactBlock">
+                    <div className="piSectionTitle">Contact Info</div>
+                    <div className="piContactLine">
+                      <span className="piContactLabel">Email</span>
+                      <span>
+                        <a href={`mailto:${pi.email}`}>{pi.email}</a>
+                      </span>
+                    </div>
+                    <div className="piContactLine">
+                      <span className="piContactLabel">Office</span>
                       <span>{pi.office}</span>
-                    </li>
+                    </div>
+                    {pi.phone ? (
+                      <div className="piContactLine">
+                        <span className="piContactLabel">Tel</span>
+                        <span>{pi.phone}</span>
+                      </div>
+                    ) : null}
+                  </div>
+                </div>
+              </div>
+              {pi.bio ? <p className="lead piBio">{pi.bio}</p> : null}
+              <div className="piSectionStack">
+                <div className="piSection">
+                  <div className="piSectionTitle">Professional Experience</div>
+                  <ul className="piTimeline">
+                    {professionalEntries.map((entry) => {
+                      const { date, text } = splitTimeline(entry);
+                      return (
+                        <li className="piTimelineItem" key={entry}>
+                          <span className="piTimelineDate">{date}</span>
+                          <span className="piTimelineText">{text || entry}</span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
-                <div className="piBiographyBlock">
-                  <strong>Biography</strong>
-                  <ul className="bioList">
-                    {pi.education.map((entry) => (
-                      <li key={entry}>{entry}</li>
-                    ))}
+                <div className="piSection">
+                  <div className="piSectionTitle">Education</div>
+                  <ul className="piTimeline">
+                    {educationEntries.map((entry) => {
+                      const { date, text } = splitTimeline(entry);
+                      return (
+                        <li className="piTimelineItem" key={entry}>
+                          <span className="piTimelineDate">{date}</span>
+                          <span className="piTimelineText">{text || entry}</span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
-                <div style={{ marginTop: 12 }}>
-                  <strong>Awards</strong>
-                  <ul className="bioList">
-                    {pi.awards.map((entry) => (
-                      <li key={entry}>{entry}</li>
-                    ))}
+                <div className="piSection">
+                  <div className="piSectionTitle">Awards</div>
+                  <ul className="piAwardsList">
+                    {pi.awards.map((entry) => {
+                      const { date, text } = splitTimeline(entry);
+                      const awardDate = date || "";
+                      const awardText = text || entry;
+                      return (
+                        <li className="piAwardsItem" key={entry}>
+                          <span className="piAwardsDate">{awardDate}</span>
+                          <span className="piAwardsText">{awardText}</span>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
