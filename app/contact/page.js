@@ -20,6 +20,7 @@ export default function ContactPage() {
             >
               <div className="cardMeta">
                 <div><strong>Email:</strong> {pi.email}</div>
+                {pi.phone ? <div><strong>Tel:</strong> {pi.phone}</div> : null}
                 <div><strong>Affiliation:</strong> {pi.affiliation}</div>
               </div>
             </Card>
@@ -28,7 +29,7 @@ export default function ContactPage() {
           <div className="piCardWrapper">
             <Card
               title="Directions"
-              meta="Visit the Seogwan Building office when you?™re on campus."
+              meta="Visit the Seogwan Building office when you're on campus."
               badges={["location"]}
             >
               <div className="cardMeta">
@@ -41,3 +42,5 @@ export default function ContactPage() {
     </div>
   );
 }
+
+
