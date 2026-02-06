@@ -3,6 +3,22 @@
     "selected":  [
                      {
                          "year":  2026,
+                         "title":  "AI-driven quantitative review of mobility-stability trade-off in oxide semiconductors",
+                         "authors":  "Ji Hoon Hong, Chi-Hoon Lee, Hyeon Woo Kim, Dong Won Jeon, Jun Hyuk Kang, Yoon-Seo Kim, Ji-Su Bae, Seonggil Heo, Sangyeon Lee, Jooyeong Na, Jaegook You, Soyeon Hong, Hyunsouk Cho, Jin-Seong Park, Sung Beom Cho",
+                         "venue":  "Nano Convergence 13, Article 4 (2026)",
+                         "date":  "2026-01-31",
+                         "first_authors":  [
+                                               "Ji Hoon Hong",
+                                               "Chi-Hoon Lee"
+                                           ],
+                         "corresponding_authors":  [
+                                                       "Hyunsouk Cho",
+                                                       "Jin-Seong Park",
+                                                       "Sung Beom Cho"
+                                                   ]
+                     },
+                     {
+                         "year":  2026,
                          "title":  "Multiscale insights enable rational design of solvent-free dry electrode processing for advanced battery electrode fabrication",
                          "authors":  "Jun Hyuk Kang, Woojin Jeong, Min Sung Kang, Hyeon Woo Kim, Dong Won Jeon, Han Uk Lee, Ji Hoon Hong, Seungmin Han, Minseok Kim, Subi Yang, Dongsoo Lee, Patrick Joohyun Kim, Taeseup Song, Moonsu Yoon, Laisuo Su, Junghyun Choi, Sung Beom Cho",
                          "venue":  "Communications Materials",
