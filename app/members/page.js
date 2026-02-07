@@ -45,9 +45,19 @@ export default function MembersPage() {
                 const methodology =
                   m.methodology || (m.research ? m.research.slice(1) : []);
                 const hasMethodology = methodology && methodology.length > 0;
+                const summaryTags = m.summaryTags && m.summaryTags.length ? m.summaryTags : null;
+                const applicationItems =
+                  m.applicationDetails && m.applicationDetails.length
+                    ? m.applicationDetails
+                    : null;
+                const hasApplicationDetails = Boolean(applicationItems);
+                const outcomes = m.outcomes && m.outcomes.length ? m.outcomes : null;
+                const hasOutcomes = Boolean(outcomes);
                 const hasMoreDetails =
                   (m.education && m.education.length) ||
-                  hasMethodology;
+                  hasMethodology ||
+                  hasApplicationDetails ||
+                  hasOutcomes;
                 const scholarUrl =
                   m.scholar_url || m.scholar || m.google_scholar;
 
@@ -128,7 +138,11 @@ export default function MembersPage() {
                       <div className="memberInfo">
                         <ul className="memberSummaryList">
                           {m.category !== "Alumni" && m.role ? <li>{m.role}</li> : null}
-                          {application ? <li>{application}</li> : null}
+                          {summaryTags
+                            ? summaryTags.map((tag) => <li key={tag}>{tag}</li>)
+                            : application
+                              ? <li>{application}</li>
+                              : null}
                           {m.email ? (
                             <li className="memberEmailInline">
                               <a href={`mailto:${m.email}`}>{m.email}</a>
@@ -185,6 +199,79 @@ export default function MembersPage() {
                                 </ul>
                               </div>
                             )}
+                            {hasApplicationDetails ? (
+                              <div className="memberDetailBlock">
+                                <strong className="memberDetailLabel memberDetailLabel--emphasis">
+                                  {m.applicationLabel || "Applications"}
+                                </strong>
+                                <ul className="researchDetailList">
+                                  {applicationItems.map((item) => (
+                                    <li key={item}>{item}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ) : null}
+                            {hasOutcomes ? (
+                              <div className="memberDetailBlock">
+                                <strong className="memberDetailLabel memberDetailLabel--emphasis">
+                                  {m.outcomesLabel || "Outcomes"}
+                                </strong>
+                                <ul className="researchDetailList">
+                                  {outcomes.map((item) => {
+                                    if (typeof item === "string") {
+                                      return <li key={item}>{item}</li>;
+                                    }
+                                    const text = item.text || "";
+                                    const highlights = Array.isArray(item.highlights)
+                                      ? item.highlights.filter(Boolean)
+                                      : [];
+                                    if (!highlights.length) {
+                                      return <li key={text}>{text}</li>;
+                                    }
+
+                                    const highlighted = [];
+                                    let cursor = 0;
+                                    let keyIndex = 0;
+                                    const orderedHighlights = [...highlights].sort(
+                                      (a, b) => text.indexOf(a) - text.indexOf(b)
+                                    );
+
+                                    orderedHighlights.forEach((segment) => {
+                                      const start = text.indexOf(segment, cursor);
+                                      if (start === -1) {
+                                        return;
+                                      }
+                                      if (start > cursor) {
+                                        highlighted.push(
+                                          <span key={`text-${keyIndex++}`}>
+                                            {text.slice(cursor, start)}
+                                          </span>
+                                        );
+                                      }
+                                      highlighted.push(
+                                        <span
+                                          key={`strong-${keyIndex++}`}
+                                          className="memberOutcomeHighlight"
+                                        >
+                                          {segment}
+                                        </span>
+                                      );
+                                      cursor = start + segment.length;
+                                    });
+
+                                    if (cursor < text.length) {
+                                      highlighted.push(
+                                        <span key={`text-${keyIndex++}`}>
+                                          {text.slice(cursor)}
+                                        </span>
+                                      );
+                                    }
+
+                                    return <li key={text}>{highlighted}</li>;
+                                  })}
+                                </ul>
+                              </div>
+                            ) : null}
                             {hasMethodology ? (
                               <div className="memberDetailBlock">
                                 <strong className="memberDetailLabel memberDetailLabel--emphasis">Methodology</strong>

@@ -121,11 +121,25 @@
                          "Multiscale workflows for battery manufacturing."
                      ],
         "application":  "Battery",
-        "methodology":  [
-                            "Finite element analysis of battery materials and processes.",
-                            "First-principles calculations for battery material research.",
-                            "Multiscale workflows for battery manufacturing."
-                        ]
+        "applicationDetails":  [
+                                   "Advanced battery materials and process research"
+                               ],
+        "applicationLabel":  "Applications",
+        "summaryTags":  [
+                            "DFT",
+                            "FEM/DEM"
+                        ],
+        "methodology":  [],
+        "outcomesLabel":  "Outcomes",
+        "outcomes":  [
+                         {
+                             "text":  "\"Multi-scale mechanical-electrochemical coupled modeling of stress generation and its impact on different battery cell geometries\", J. Shin, Y.K. Lee, Journal of Power Sources, 2024",
+                             "highlights":  [
+                                                 "J. Shin",
+                                                 "Journal of Power Sources"
+                                             ]
+                         }
+                     ]
     },
     {
         "name":  "Jonghun Seo",
