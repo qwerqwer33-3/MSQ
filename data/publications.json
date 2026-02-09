@@ -115,6 +115,23 @@
                      },
                      {
                          "year":  2025,
+                         "title":  "Phosphotungstic and phosphomolybdic acid solid-solutions: a new approach for QLED hole injection layers",
+                         "authors":  "Han Bin Cho, Ji Yoon Moon, Jeong Wan Min, Ha Jun Kim, Han Uk Lee, Hwa Pyeong Park, Sung Woo Jang, Jeong Min Seo, Sung Beom Cho, Heesun Yang, Won Bin Im",
+                         "venue":  "J. Mater. Chem. C, 2025, 13, 22406-22413",
+                         "date":  "2025-08-12",
+                         "first_authors":  [
+                                               "Han Bin Cho",
+                                               "Ji Yoon Moon",
+                                               "Jeong Wan Min",
+                                               "Ha Jun Kim"
+                                           ],
+                         "corresponding_authors":  [
+                                                       "Heesun Yang",
+                                                       "Won Bin Im"
+                                                   ]
+                     },
+                     {
+                         "year":  2025,
                          "title":  "Investigation on the effect of metal incorporation in metal selenide nanoparticles and their encapsulation in hollow carbon nanospheres on improving the sodium-ion battery performance",
                          "authors":  "Seul Jeong, Ki Beom Kim, Mingyu Jeon, Ju Young Kim, Jin Hyeong Lee, Su Yeon Jang, Dong Won Jeon, Ji Myeon Park, Yeon Woo Nahm, Chung-Yul Yoo, Donghun Kim, Jung-Hoon Lee, Sung Beom Cho, Yun Chan Kang, Jin-Sung Park",
                          "venue":  "Chemical Engineering Journal, 167019",

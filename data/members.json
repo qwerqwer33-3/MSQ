@@ -124,7 +124,7 @@
         "applicationDetails":  [
                                    "Advanced battery materials and process research"
                                ],
-        "applicationLabel":  "Applications",
+        "applicationLabel":  "Research Interests",
         "summaryTags":  [
                             "DFT",
                             "FEM/DEM"
@@ -306,15 +306,19 @@
         "email":  "jaehwang3183@ajou.ac.kr",
         "photo":  "/images/members/jaehwang_kim.png",
         "education":  [
-                          "B.S. candidate, Advanced Materials Science and Engineering, Ajou University"
+                          "2021.02 - Present: B.S., Materials Science and Engineering, Ajou University"
                       ],
         "research":  [
-                         "NLP for materials science."
+                         "LLM for materials science."
                      ],
-        "application":  "Energy Materials",
-        "methodology":  [
-                            "NLP for materials science."
-                        ]
+        "application":  "Next-generation batteries",
+        "applicationDetails":  [
+                                   "Next-generation batteries"
+                               ],
+        "summaryTags":  [
+                            "LLM"
+                        ],
+        "methodology":  []
     },
     {
         "name":  "Jaeseon Yoo",

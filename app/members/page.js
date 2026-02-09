@@ -202,7 +202,7 @@ export default function MembersPage() {
                             {hasApplicationDetails ? (
                               <div className="memberDetailBlock">
                                 <strong className="memberDetailLabel memberDetailLabel--emphasis">
-                                  {m.applicationLabel || "Applications"}
+                                  {m.applicationLabel || "Research Interests"}
                                 </strong>
                                 <ul className="researchDetailList">
                                   {applicationItems.map((item) => (
