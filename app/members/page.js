@@ -42,9 +42,6 @@ export default function MembersPage() {
                 const detailsId = `${section.id}-${idx}`;
                 const isOpen = Boolean(openDetails[detailsId]);
                 const application = m.application || (m.research && m.research[0]);
-                const methodology =
-                  m.methodology || (m.research ? m.research.slice(1) : []);
-                const hasMethodology = methodology && methodology.length > 0;
                 const summaryTags = m.summaryTags && m.summaryTags.length ? m.summaryTags : null;
                 const applicationItems =
                   m.applicationDetails && m.applicationDetails.length
@@ -55,7 +52,6 @@ export default function MembersPage() {
                 const hasOutcomes = Boolean(outcomes);
                 const hasMoreDetails =
                   (m.education && m.education.length) ||
-                  hasMethodology ||
                   hasApplicationDetails ||
                   hasOutcomes;
                 const scholarUrl =
@@ -269,16 +265,6 @@ export default function MembersPage() {
 
                                     return <li key={text}>{highlighted}</li>;
                                   })}
-                                </ul>
-                              </div>
-                            ) : null}
-                            {hasMethodology ? (
-                              <div className="memberDetailBlock">
-                                <strong className="memberDetailLabel memberDetailLabel--emphasis">Methodology</strong>
-                                <ul className="researchDetailList">
-                                  {methodology.map((item) => (
-                                    <li key={item}>{item}</li>
-                                  ))}
                                 </ul>
                               </div>
                             ) : null}

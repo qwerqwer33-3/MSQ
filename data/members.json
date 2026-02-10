@@ -46,19 +46,37 @@
         "role":  "Ph.D. Candidate",
         "affiliation":  "Energy Systems Research, Ajou University",
         "email":  "kkkb2573@ajou.ac.kr",
+        "scholar_url":  "https://scholar.google.co.kr/citations?user=JpJJX_IAAAAJ&hl=ko",
         "photo":  "/images/members/minseong_kang.png",
         "education":  [
-                          "Ph.D. candidate, Energy Systems Research, Ajou University"
+                          "2022.09 - Present: Integrated Ph.D. candidate, Department of Energy Systems, Ajou University"
                       ],
         "research":  [
                          "Energy harvester, semiconductor device, and battery process simulations.",
                          "Multiscale nuclear-generation simulation."
                      ],
-        "application":  "Semiconductor / Battery / Energy Materials",
-        "methodology":  [
-                            "Energy harvester, semiconductor device, and battery process simulations.",
-                            "Multiscale nuclear-generation simulation."
-                        ]
+        "application":  "Battery / Semiconductor / Hydrovoltaic / Nucleation",
+        "applicationDetails":  [
+                                   "Hydrovoltaic",
+                                   "Battery",
+                                   "Semiconductor",
+                                   "Nucleation"
+                               ],
+        "applicationLabel":  "Research Interests",
+        "summaryTags":  [
+                            "DFT/MD",
+                            "FEM"
+                        ],
+        "outcomesLabel":  "Outcome",
+        "outcomes":  [
+                         {
+                             "text":  "\"Understanding the electrokinetic role of ions on electricity generation in droplet-based hydrovoltaic systems\", M. S. Kang, H. Ko, S. Lee*, S. B. Cho*, The Journal of Physical Chemistry C, 2023",
+                             "highlights":  [
+                                                 "M. S. Kang",
+                                                 "The Journal of Physical Chemistry C"
+                                             ]
+                         }
+                     ]
     },
     {
         "name":  "Dongwon Jeon",
@@ -120,9 +138,10 @@
                          "First-principles calculations for battery material research.",
                          "Multiscale workflows for battery manufacturing."
                      ],
-        "application":  "Battery",
+        "application":  "Battery materials / Battery process",
         "applicationDetails":  [
-                                   "Advanced battery materials and process research"
+                                   "Battery materials",
+                                   "Battery process"
                                ],
         "applicationLabel":  "Research Interests",
         "summaryTags":  [
@@ -130,7 +149,7 @@
                             "FEM/DEM"
                         ],
         "methodology":  [],
-        "outcomesLabel":  "Outcomes",
+        "outcomesLabel":  "Outcome",
         "outcomes":  [
                          {
                              "text":  "\"Multi-scale mechanical-electrochemical coupled modeling of stress generation and its impact on different battery cell geometries\", J. Shin, Y.K. Lee, Journal of Power Sources, 2024",
@@ -311,14 +330,14 @@
         "research":  [
                          "LLM for materials science."
                      ],
-        "application":  "Next-generation batteries",
+        "application":  "Battery",
         "applicationDetails":  [
-                                   "Next-generation batteries"
+                                   "Battery"
                                ],
+        "applicationLabel":  "Research Interests",
         "summaryTags":  [
                             "LLM"
-                        ],
-        "methodology":  []
+                        ]
     },
     {
         "name":  "Jaeseon Yoo",
