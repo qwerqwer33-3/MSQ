@@ -248,17 +248,21 @@
         "email":  "wlsehd949@ajou.ac.kr",
         "photo":  "/images/members/jindong_hwang.png",
         "education":  [
-                          "M.S. candidate, Artificial Intelligence, Ajou University",
-                          "B.S., Advanced Materials Science and Engineering, Ajou University"
+                          "2026.03 - Present: M.S. candidate, Artificial Intelligence, Ajou University",
+                          "2022.03 - 2026.02: B.S., Advanced Materials Science and Engineering, Ajou University"
                       ],
         "research":  [
                          "Battery material modeling with first-principles and molecular dynamics.",
                          "Ferroelectric research using NLP."
                      ],
-        "application":  "Semiconductor / Battery",
-        "methodology":  [
-                            "Battery material modeling with first-principles and molecular dynamics.",
-                            "Ferroelectric research using NLP."
+        "application":  "Semiconductor",
+        "applicationDetails":  [
+                                   "Semiconductor (Ferroelectrics, DRAM)"
+                               ],
+        "applicationLabel":  "Research Interests",
+        "summaryTags":  [
+                            "LLM/NLP",
+                            "ML"
                         ]
     },
     {
