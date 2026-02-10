@@ -57,10 +57,8 @@
                      ],
         "application":  "Battery / Semiconductor / Hydrovoltaic / Nucleation",
         "applicationDetails":  [
-                                   "Hydrovoltaic",
-                                   "Battery",
-                                   "Semiconductor",
-                                   "Nucleation"
+                                   "Battery / Semiconductor",
+                                   "Hydrovoltaic / Nucleation"
                                ],
         "applicationLabel":  "Research Interests",
         "summaryTags":  [
