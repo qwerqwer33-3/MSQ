@@ -17,6 +17,8 @@ const formatDisplayDate = (date) => {
   return `${day}/${month}/${year}`;
 };
 
+const startsWithDateLikePrefix = (title) => /^\d{1,2}-\d{1,2}\/\d{2}\/\d{4}/.test(title || "");
+
 export default function ActivitiesPage() {
   const sorted = useMemo(
     () => [...activities].sort((a, b) => (a.date < b.date ? 1 : -1)),
@@ -69,7 +71,14 @@ export default function ActivitiesPage() {
             const showArrows = images.length > 1;
 
             return (
-              <Card key={key} title={`${formatDisplayDate(e.date)} - ${e.title}`}>
+              <Card
+                key={key}
+                title={
+                  startsWithDateLikePrefix(e.title)
+                    ? e.title
+                    : `${formatDisplayDate(e.date)} - ${e.title}`
+                }
+              >
                 <div
                   className="activityMediaWrap activityMediaPreview"
                   role="button"
@@ -136,7 +145,11 @@ export default function ActivitiesPage() {
             >
               x
             </button>
-            <h3 className="activityModalTitle">{`${formatDisplayDate(activeItem.date)} - ${activeItem.title}`}</h3>
+            <h3 className="activityModalTitle">
+              {startsWithDateLikePrefix(activeItem.title)
+                ? activeItem.title
+                : `${formatDisplayDate(activeItem.date)} - ${activeItem.title}`}
+            </h3>
             <p className="activityModalDescription">{activeItem.description}</p>
             <div className="activityMediaWrap activityModalMedia">
               {activeImage ? (
