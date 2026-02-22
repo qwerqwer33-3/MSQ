@@ -61,7 +61,6 @@ function renderAuthors(authors, keyPrefix, firstAuthors = [], correspondingAutho
 
 export default function OutcomesPage() {
   const selected = pubs.selected;
-  const scholarSearchBase = "https://scholar.google.com/scholar?q=";
   const [activeFilter, setActiveFilter] = useState("overall");
 
   const totalCount = selected.length;
@@ -203,7 +202,7 @@ export default function OutcomesPage() {
               <h3 className="publicationYear">{label}</h3>
               <div className="grid publicationGrid">
                 {items.map((p) => {
-                  const url = p.url || `${scholarSearchBase}${encodeURIComponent(p.title)}`;
+                  const url = p.url;
 
                   return (
                     <Card
@@ -211,9 +210,13 @@ export default function OutcomesPage() {
                       title={
                         <span className="publicationTitleLine">
                           <span className="publicationIndex">{p.globalIndex}.</span>
-                          <a className="publicationTitleLink" href={url} target="_blank" rel="noreferrer">
-                            {p.title}
-                          </a>
+                          {url ? (
+                            <a className="publicationTitleLink" href={url} target="_blank" rel="noreferrer">
+                              {p.title}
+                            </a>
+                          ) : (
+                            <span>{p.title}</span>
+                          )}
                         </span>
                       }
                     >
