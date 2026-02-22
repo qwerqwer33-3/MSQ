@@ -1,9 +1,57 @@
+"use client";
+
+import { useMemo, useState } from "react";
 import activities from "../../data/activities.json";
 import Card from "../../components/Card";
 import { withBasePath } from "../../lib/basePath";
 
+const getImages = (item) =>
+  Array.isArray(item.images) && item.images.length
+    ? item.images
+    : item.image
+      ? [item.image]
+      : [];
+
+const formatDisplayDate = (date) => {
+  const [year, month, day] = date.split("-");
+  return `${day}/${month}/${year}`;
+};
+
 export default function ActivitiesPage() {
-  const sorted = [...activities].sort((a, b) => (a.date < b.date ? 1 : -1));
+  const sorted = useMemo(
+    () => [...activities].sort((a, b) => (a.date < b.date ? 1 : -1)),
+    []
+  );
+  const [indexByKey, setIndexByKey] = useState({});
+  const [activeKey, setActiveKey] = useState(null);
+  const [modalIndex, setModalIndex] = useState(0);
+
+  const moveSlide = (key, length, delta) => {
+    setIndexByKey((prev) => {
+      const current = prev[key] ?? 0;
+      const next = (current + delta + length) % length;
+      return { ...prev, [key]: next };
+    });
+  };
+
+  const activeItem = sorted.find((e) => `${e.date}-${e.title}` === activeKey) ?? null;
+  const activeImages = activeItem ? getImages(activeItem) : [];
+  const activeImage = activeImages[modalIndex] ?? null;
+
+  const openModal = (key, initialIndex) => {
+    setActiveKey(key);
+    setModalIndex(initialIndex);
+  };
+
+  const closeModal = () => {
+    setActiveKey(null);
+    setModalIndex(0);
+  };
+
+  const moveModal = (delta) => {
+    if (!activeImages.length) return;
+    setModalIndex((prev) => (prev + delta + activeImages.length) % activeImages.length);
+  };
 
   return (
     <div>
@@ -12,30 +60,119 @@ export default function ActivitiesPage() {
       </section>
 
       <section className="section">
-        <div className="grid">
-          {sorted.map((e) => (
-            <Card
-              key={`${e.date}-${e.title}`}
-              title={`${e.date} · ${e.title}`}
-              meta={e.description}
-            >
-              <div style={{ marginTop: 10 }}>
-                <img
-                  src={withBasePath(e.image)}
-                  alt={e.title}
-                  style={{
-                    width: "100%",
-                    height: 180,
-                    objectFit: "cover",
-                    borderRadius: 12,
-                    border: "1px solid var(--border)"
+        <div className="grid activitiesGrid">
+          {sorted.map((e) => {
+            const key = `${e.date}-${e.title}`;
+            const images = getImages(e);
+            const currentIdx = indexByKey[key] ?? 0;
+            const currentImage = images[currentIdx];
+            const showArrows = images.length > 1;
+
+            return (
+              <Card key={key} title={`${formatDisplayDate(e.date)} - ${e.title}`}>
+                <div
+                  className="activityMediaWrap activityMediaPreview"
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => openModal(key, currentIdx)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" || event.key === " ") {
+                      event.preventDefault();
+                      openModal(key, currentIdx);
+                    }
                   }}
-                />
-              </div>
-            </Card>
-          ))}
+                >
+                  {currentImage ? (
+                    <img
+                      src={withBasePath(currentImage)}
+                      alt={`${e.title} ${currentIdx + 1}`}
+                      className="activityImage"
+                    />
+                  ) : null}
+                  {showArrows ? (
+                    <>
+                      <button
+                        type="button"
+                        className="activityNav activityNavLeft"
+                        aria-label={`Previous image for ${e.title}`}
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          moveSlide(key, images.length, -1);
+                        }}
+                      >
+                        {"<"}
+                      </button>
+                      <button
+                        type="button"
+                        className="activityNav activityNavRight"
+                        aria-label={`Next image for ${e.title}`}
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          moveSlide(key, images.length, 1);
+                        }}
+                      >
+                        {">"}
+                      </button>
+                      <div className="activityCounter">
+                        {currentIdx + 1}/{images.length}
+                      </div>
+                    </>
+                  ) : null}
+                </div>
+              </Card>
+            );
+          })}
         </div>
       </section>
+
+      {activeItem ? (
+        <div className="activityModalBackdrop" onClick={closeModal} role="presentation">
+          <div className="activityModal" onClick={(event) => event.stopPropagation()}>
+            <button
+              type="button"
+              className="activityModalClose"
+              onClick={closeModal}
+              aria-label="Close details"
+            >
+              x
+            </button>
+            <h3 className="activityModalTitle">{`${formatDisplayDate(activeItem.date)} - ${activeItem.title}`}</h3>
+            <p className="activityModalDescription">{activeItem.description}</p>
+            <div className="activityMediaWrap activityModalMedia">
+              {activeImage ? (
+                <img
+                  src={withBasePath(activeImage)}
+                  alt={`${activeItem.title} ${modalIndex + 1}`}
+                  className="activityImage"
+                />
+              ) : null}
+              {activeImages.length > 1 ? (
+                <>
+                  <button
+                    type="button"
+                    className="activityNav activityNavLeft activityNavStatic"
+                    aria-label={`Previous image for ${activeItem.title}`}
+                    onClick={() => moveModal(-1)}
+                  >
+                    {"<"}
+                  </button>
+                  <button
+                    type="button"
+                    className="activityNav activityNavRight activityNavStatic"
+                    aria-label={`Next image for ${activeItem.title}`}
+                    onClick={() => moveModal(1)}
+                  >
+                    {">"}
+                  </button>
+                  <div className="activityCounter activityCounterStatic">
+                    {modalIndex + 1}/{activeImages.length}
+                  </div>
+                </>
+              ) : null}
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

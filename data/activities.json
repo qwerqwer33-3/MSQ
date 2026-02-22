@@ -1,14 +1,87 @@
 [
   {
-    "date": "2026-01-15",
-    "title": "Lab seminar",
-    "description": "Internal weekly seminar and discussion.",
-    "image": "/images/placeholder.svg"
+    "date": "2026-02-12",
+    "title": "Lab Dinner with funMat Lab",
+    "description": "Group dinner to welcome students visiting from Hanyang University's funMat Lab.",
+    "image": "/images/Activities/2026.02.12.jpg"
   },
   {
-    "date": "2025-12-05",
-    "title": "Conference participation",
-    "description": "Presented recent research results.",
-    "image": "/images/placeholder.svg"
+    "date": "2025-11-14",
+    "title": "Prof. Rohan Mishra Visit (Nov 3-14, 2025)",
+    "description": "Academic visit and collaboration period with Prof. Rohan Mishra.",
+    "images": [
+      "/images/Activities/2025.11.3-2025.11.14_1.jpg",
+      "/images/Activities/2025.11.3-2025.11.14_2.jpg"
+    ]
+  },
+  {
+    "date": "2025-11-08",
+    "title": "Gwanggyosan Hike",
+    "description": "Commemorative hike during Prof. Rohan's visit.",
+    "images": [
+      "/images/Activities/2025.11.08_1.jpg",
+      "/images/Activities/2025.11.08_2.jpg",
+      "/images/Activities/2025.11.08_3.jpg"
+    ]
+  },
+  {
+    "date": "2025-09-17",
+    "title": "Dr. Hyunwoo Kim Farewell",
+    "description": "Lab farewell gathering for Dr. Hyunwoo Kim.",
+    "image": "/images/Activities/2025.09.17.jpg"
+  },
+  {
+    "date": "2025-09-11",
+    "title": "New Member Welcome",
+    "description": "Welcome event for new integrated-course student Jonghun Seo.",
+    "image": "/images/Activities/2025.09.11.jpg"
+  },
+  {
+    "date": "2025-08-02",
+    "title": "WashU mcube Group Visit",
+    "description": "Group visit to the WashU mcube research group.",
+    "image": "/images/Activities/2025.08.02.jpg"
+  },
+  {
+    "date": "2025-03-01",
+    "title": "Spring Semester Kickoff",
+    "description": "Lab opening party for the start of the spring semester.",
+    "image": "/images/Activities/2025.03.jpg"
+  },
+  {
+    "date": "2025-02-25",
+    "title": "Post-Trip Mugyojuga Dinner",
+    "description": "Team dinner at Mugyojuga after the Seoul trip.",
+    "image": "/images/Activities/2025.02.25.jpg"
+  },
+  {
+    "date": "2024-12-26",
+    "title": "Ski MT",
+    "description": "Winter ski MT trip.",
+    "image": "/images/Activities/2024.12.26.jpg"
+  },
+  {
+    "date": "2024-07-19",
+    "title": "Post-Meeting Hamburger",
+    "description": "Hamburger dinner after a lab meeting.",
+    "image": "/images/Activities/2024.07.19.jpg"
+  },
+  {
+    "date": "2024-04-05",
+    "title": "Paldalmun Picnic",
+    "description": "Spring picnic near Paldalmun.",
+    "image": "/images/Activities/2024.04.05.jpg"
+  },
+  {
+    "date": "2024-02-28",
+    "title": "After-Meeting Hamburger Run",
+    "description": "Casual hamburger outing after the meeting.",
+    "image": "/images/Activities/2024.02.28.jpg"
+  },
+  {
+    "date": "2023-04-08",
+    "title": "Joint Daejeon MT",
+    "description": "Joint MT event with Ajou, Korea, Pusan, and KAIST teams.",
+    "image": "/images/Activities/2023.04.08.jpg"
   }
 ]
