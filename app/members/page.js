@@ -17,6 +17,51 @@ const sectionOrder = [
   { id: "alumni", keys: ["Alumni"], label: "Alumni" }
 ];
 
+function renderHighlightedText(text, highlights) {
+  const safeText = text || "";
+  const safeHighlights = Array.isArray(highlights) ? highlights.filter(Boolean) : [];
+  if (!safeHighlights.length) {
+    return safeText;
+  }
+
+  const highlighted = [];
+  let cursor = 0;
+  let keyIndex = 0;
+  const orderedHighlights = [...safeHighlights].sort(
+    (a, b) => safeText.indexOf(a) - safeText.indexOf(b)
+  );
+
+  orderedHighlights.forEach((segment) => {
+    const start = safeText.indexOf(segment, cursor);
+    if (start === -1) {
+      return;
+    }
+    if (start > cursor) {
+      highlighted.push(
+        <span key={`text-${keyIndex++}`}>
+          {safeText.slice(cursor, start)}
+        </span>
+      );
+    }
+    highlighted.push(
+      <span key={`strong-${keyIndex++}`} className="memberOutcomeHighlight">
+        {segment}
+      </span>
+    );
+    cursor = start + segment.length;
+  });
+
+  if (cursor < safeText.length) {
+    highlighted.push(
+      <span key={`text-${keyIndex++}`}>
+        {safeText.slice(cursor)}
+      </span>
+    );
+  }
+
+  return highlighted;
+}
+
 export default function MembersPage() {
   const [openDetails, setOpenDetails] = useState({});
 
@@ -217,53 +262,35 @@ export default function MembersPage() {
                                     if (typeof item === "string") {
                                       return <li key={item}>{item}</li>;
                                     }
+                                    if (item && item.title) {
+                                      const key = `${item.title}-${item.url || ""}`;
+                                      return (
+                                        <li key={key}>
+                                          {item.url ? (
+                                            <a
+                                              href={item.url}
+                                              target="_blank"
+                                              rel="noreferrer"
+                                              className="memberOutcomeLink"
+                                            >
+                                              {item.title}
+                                            </a>
+                                          ) : (
+                                            <span>{item.title}</span>
+                                          )}
+                                          {item.detail ? (
+                                            <span className="memberOutcomeDetail">
+                                              , {renderHighlightedText(item.detail, item.highlights)}
+                                            </span>
+                                          ) : null}
+                                        </li>
+                                      );
+                                    }
                                     const text = item.text || "";
                                     const highlights = Array.isArray(item.highlights)
                                       ? item.highlights.filter(Boolean)
                                       : [];
-                                    if (!highlights.length) {
-                                      return <li key={text}>{text}</li>;
-                                    }
-
-                                    const highlighted = [];
-                                    let cursor = 0;
-                                    let keyIndex = 0;
-                                    const orderedHighlights = [...highlights].sort(
-                                      (a, b) => text.indexOf(a) - text.indexOf(b)
-                                    );
-
-                                    orderedHighlights.forEach((segment) => {
-                                      const start = text.indexOf(segment, cursor);
-                                      if (start === -1) {
-                                        return;
-                                      }
-                                      if (start > cursor) {
-                                        highlighted.push(
-                                          <span key={`text-${keyIndex++}`}>
-                                            {text.slice(cursor, start)}
-                                          </span>
-                                        );
-                                      }
-                                      highlighted.push(
-                                        <span
-                                          key={`strong-${keyIndex++}`}
-                                          className="memberOutcomeHighlight"
-                                        >
-                                          {segment}
-                                        </span>
-                                      );
-                                      cursor = start + segment.length;
-                                    });
-
-                                    if (cursor < text.length) {
-                                      highlighted.push(
-                                        <span key={`text-${keyIndex++}`}>
-                                          {text.slice(cursor)}
-                                        </span>
-                                      );
-                                    }
-
-                                    return <li key={text}>{highlighted}</li>;
+                                    return <li key={text}>{renderHighlightedText(text, highlights)}</li>;
                                   })}
                                 </ul>
                               </div>

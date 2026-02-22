@@ -68,11 +68,13 @@
         "outcomesLabel":  "Outcome",
         "outcomes":  [
                          {
-                             "text":  "\"Understanding the electrokinetic role of ions on electricity generation in droplet-based hydrovoltaic systems\", M. S. Kang, H. Ko, S. Lee*, S. B. Cho*, The Journal of Physical Chemistry C, 2023",
+                             "title":  "Understanding the electrokinetic role of ions on electricity generation in droplet-based hydrovoltaic systems",
+                             "url":  "https://pubs.acs.org/doi/10.1021/acs.jpcc.3c03183",
+                             "detail":  "M. S. Kang\u2020, H. Ko, S. Lee*, S. B. Cho*, The Journal of Physical Chemistry C, 2023",
                              "highlights":  [
-                                                 "M. S. Kang",
-                                                 "The Journal of Physical Chemistry C"
-                                             ]
+                                                "M. S. Kang",
+                                                "The Journal of Physical Chemistry C"
+                                            ]
                          }
                      ]
     },
@@ -150,11 +152,13 @@
         "outcomesLabel":  "Outcome",
         "outcomes":  [
                          {
-                             "text":  "\"Multi-scale mechanical-electrochemical coupled modeling of stress generation and its impact on different battery cell geometries\", J. Shin, Y.K. Lee, Journal of Power Sources, 2024",
+                             "title":  "Multi-scale mechanical-electrochemical coupled modeling of stress generation and its impact on different battery cell geometries",
+                             "url":  "https://doi.org/10.1016/j.jpowsour.2024.234064",
+                             "detail":  "J. Shin\u2020, Y.K. Lee*, Journal of Power Sources, 2024",
                              "highlights":  [
-                                                 "J. Shin",
-                                                 "Journal of Power Sources"
-                                             ]
+                                                "J. Shin",
+                                                "Journal of Power Sources"
+                                            ]
                          }
                      ]
     },

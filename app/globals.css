@@ -793,6 +793,15 @@ h2{font-size:28px;margin:10px 0 12px;}
 .memberDetailBlock strong{display:block;color:var(--text);font-size:15px;margin-bottom:6px;font-weight:700;}
 .memberDetailLabel--emphasis{font-size:16px;}
 .memberOutcomeHighlight{font-weight:700;display:inline;}
+.memberOutcomeLink{
+  color:var(--brand);
+  text-decoration:underline;
+  text-underline-offset:2px;
+  font-weight:600;
+}
+.memberOutcomeDetail{
+  color:var(--muted);
+}
 .memberSummaryList{margin:0;padding-left:1.1rem;display:grid;gap:6px;color:var(--muted);font-size:1rem;line-height:1.6;list-style:disc;}
 .memberEmailInline{font-size:1rem;line-height:1.5;}
 .memberEmailInline a{color:var(--brand);}
