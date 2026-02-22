@@ -1,46 +1,42 @@
 import pi from "../../data/pi.json";
-import Card from "../../components/Card";
 
 export default function ContactPage() {
+  const mapEmbedUrl = "https://maps.google.com/maps?q=37.2826,127.0462&z=17&output=embed";
+
   return (
-    <div className="contactPage">
-      <section className="section">
-        <div className="piCardWrapper">
-          <h1 className="cardTitle">Contact</h1>
+    <div className="contactPage contactLayout">
+      <section className="section contactIntroSection">
+        <h1>Contact</h1>
+        <div className="contactIntroBox">
+          <p className="contactIntroText">
+            For recruitment, research collaboration, technical consulting, and joint projects,
+            please contact us through the channel below.
+          </p>
         </div>
       </section>
 
-      <section className="section">
-        <div className="grid">
-          <div className="piCardWrapper">
-            <Card
-              title="General inquiries"
-              meta="Email for collaboration, recruitment, or general questions."
-              badges={["email", "collaboration"]}
-            >
-              <div className="cardMeta">
-                <div><strong>Email:</strong> {pi.email}</div>
-                {pi.phone ? <div><strong>Tel:</strong> {pi.phone}</div> : null}
-                <div><strong>Affiliation:</strong> {pi.affiliation}</div>
-              </div>
-            </Card>
+      <section className="section contactPrimarySection">
+        <div className="contactPrimaryBox">
+          <div className="contactPrimaryRow">
+            <a href={`mailto:${pi.email}`}>{pi.email}</a>
+            <span className="contactDivider">|</span>
+            <span>{pi.phone}</span>
           </div>
+        </div>
+      </section>
 
-          <div className="piCardWrapper">
-            <Card
-              title="Directions"
-              meta="Visit the Seogwan Building office when you're on campus."
-              badges={["location"]}
-            >
-              <div className="cardMeta">
-                <div><strong>Office:</strong> {pi.office}</div>
-              </div>
-            </Card>
+      <section className="section contactMapSection">
+        <div className="contactMapCenter">
+          <div className="contactMapCard">
+            <iframe
+              title="MSQ Lab location map"
+              src={mapEmbedUrl}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>
     </div>
   );
 }
-
-
