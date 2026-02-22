@@ -1,7 +1,9 @@
 import pi from "../../data/pi.json";
 
 export default function ContactPage() {
-  const mapEmbedUrl = "https://maps.google.com/maps?q=37.2826,127.0462&z=17&output=embed";
+  const lat = "37.28373040792266";
+  const lng = "127.04276203436734";
+  const mapEmbedUrl = `https://maps.google.com/maps?ll=${lat},${lng}&q=${lat},${lng}&z=18&output=embed`;
 
   return (
     <div className="contactPage contactLayout">
