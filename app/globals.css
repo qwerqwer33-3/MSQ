@@ -715,7 +715,10 @@ h2{font-size:28px;margin:10px 0 12px;}
 .contactSplitGrid{
   margin-top:48px;
   display:grid;
-  grid-template-columns:minmax(320px, 0.8fr) minmax(0, 1.2fr);
+  /* previous:
+     grid-template-columns:minmax(320px, 0.8fr) minmax(0, 1.2fr);
+  */
+  grid-template-columns:minmax(380px, 1fr) minmax(0, 0.95fr);
   gap:20px;
   align-items:start;
 }
@@ -731,7 +734,10 @@ h2{font-size:28px;margin:10px 0 12px;}
   background:var(--panel);
   border:1px solid var(--border);
   border-radius:12px;
-  padding:14px;
+  padding:10px 12px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
 }
 .contactIntroText{
   margin:0;
@@ -744,17 +750,17 @@ h2{font-size:28px;margin:10px 0 12px;}
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:22px;
-  font-size:1.4rem;
+  gap:18px;
+  font-size:1.25rem;
   font-weight:500;
   color:#1e293b;
-  padding:18px 0;
+  padding:4px 0 0;
   text-align:center;
   flex-wrap:wrap;
 }
 .contactPrimaryRowInline{
-  margin-top:12px;
-  padding-top:12px;
+  margin-top:8px;
+  padding-top:8px;
   padding-bottom:0;
   border-top:1px solid rgba(15,23,42,0.12);
 }
@@ -775,7 +781,8 @@ h2{font-size:28px;margin:10px 0 12px;}
   justify-content:center;
 }
 .contactMapCard{
-  width:min(460px, 100%);
+  /* previous: width:min(460px, 100%); */
+  width:min(520px, 100%);
   background:var(--panel);
   border:1px solid var(--border);
   border-radius:14px;
@@ -1009,8 +1016,8 @@ nextjs-portal{display:none!important;}
   }
   .activitiesGrid{grid-template-columns:1fr;}
   .contactPrimaryRow{
-    font-size:1.05rem;
-    gap:12px;
+    font-size:1rem;
+    gap:10px;
   }
   .contactMapCard iframe{
     height:300px;
