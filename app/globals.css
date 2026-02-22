@@ -709,12 +709,29 @@ h2{font-size:28px;margin:10px 0 12px;}
   border-bottom:1px solid rgba(15,23,42,0.12);
   padding-bottom:20px;
 }
-.contactIntroBox{
-  margin-top:12px;
+.contactSplitSection{
+  padding-top:10px;
+}
+.contactSplitGrid{
+  margin-top:48px;
+  display:grid;
+  grid-template-columns:minmax(320px, 0.8fr) minmax(0, 1.2fr);
+  gap:20px;
+  align-items:start;
+}
+.contactSplitLeft{
+  display:block;
+}
+.contactSplitRight{
+  display:flex;
+  justify-content:flex-start;
+  align-self:start;
+}
+.contactTextPanel{
   background:var(--panel);
   border:1px solid var(--border);
   border-radius:12px;
-  padding:12px 14px;
+  padding:14px;
 }
 .contactIntroText{
   margin:0;
@@ -722,16 +739,6 @@ h2{font-size:28px;margin:10px 0 12px;}
   line-height:1.7;
   font-size:1.05rem;
   max-width:none;
-}
-.contactPrimarySection{
-  border-bottom:1px solid rgba(15,23,42,0.12);
-  padding-bottom:20px;
-}
-.contactPrimaryBox{
-  background:var(--panel);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:8px 12px;
 }
 .contactPrimaryRow{
   display:flex;
@@ -744,6 +751,12 @@ h2{font-size:28px;margin:10px 0 12px;}
   padding:18px 0;
   text-align:center;
   flex-wrap:wrap;
+}
+.contactPrimaryRowInline{
+  margin-top:12px;
+  padding-top:12px;
+  padding-bottom:0;
+  border-top:1px solid rgba(15,23,42,0.12);
 }
 .contactPrimaryRow a{
   color:#0369a1;
@@ -762,7 +775,7 @@ h2{font-size:28px;margin:10px 0 12px;}
   justify-content:center;
 }
 .contactMapCard{
-  width:min(900px, 100%);
+  width:min(460px, 100%);
   background:var(--panel);
   border:1px solid var(--border);
   border-radius:14px;
@@ -771,7 +784,7 @@ h2{font-size:28px;margin:10px 0 12px;}
 }
 .contactMapCard iframe{
   width:100%;
-  height:360px;
+  height:300px;
   border:0;
   display:block;
 }
@@ -988,6 +1001,12 @@ nextjs-portal{display:none!important;}
 .researchTopicTitle{font-size:28px;margin:0 0 12px;}
 .researchTopicBody{margin:0;line-height:1.7;color:var(--text);}
 @media (max-width: 860px){
+  .contactSplitGrid{
+    grid-template-columns:1fr;
+  }
+  .contactSplitRight{
+    justify-content:center;
+  }
   .activitiesGrid{grid-template-columns:1fr;}
   .contactPrimaryRow{
     font-size:1.05rem;

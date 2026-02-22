@@ -7,6 +7,36 @@ export default function ContactPage() {
 
   return (
     <div className="contactPage contactLayout">
+      <section className="section contactSplitSection">
+        <h1>Contact</h1>
+        <div className="contactSplitGrid">
+          <div className="contactSplitRight">
+            <div className="contactMapCard">
+              <iframe
+                title="MSQ Lab location map"
+                src={mapEmbedUrl}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </div>
+          <div className="contactSplitLeft">
+            <div className="contactTextPanel">
+              <p className="contactIntroText">
+                For recruitment, research collaboration, technical consulting, and joint projects,
+                please contact us through the channel below.
+              </p>
+              <div className="contactPrimaryRow contactPrimaryRowInline">
+                <a href={`mailto:${pi.email}`}>{pi.email}</a>
+                <span className="contactDivider">|</span>
+                <span>{pi.phone}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Previous layout (kept for reference)
       <section className="section contactIntroSection">
         <h1>Contact</h1>
         <div className="contactIntroBox">
@@ -16,7 +46,6 @@ export default function ContactPage() {
           </p>
         </div>
       </section>
-
       <section className="section contactPrimarySection">
         <div className="contactPrimaryBox">
           <div className="contactPrimaryRow">
@@ -26,7 +55,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
       <section className="section contactMapSection">
         <div className="contactMapCenter">
           <div className="contactMapCard">
@@ -39,6 +67,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+      */}
     </div>
   );
 }
