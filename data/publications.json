@@ -921,14 +921,14 @@
     },
     {
       "year": 2022,
-      "title": "다성분계 물성을 예측하기 위한 BaTiO3기반 계산과학 플랫폼 구축 (Establishment of a BaTiO3-based Computational Science Platform to Predict Multi-component Properties)",
-      "authors": "이동건 (Dong Geon Lee), 이한욱 (Han Uk Lee), 임원빈 (Won Bin Im), 고현석 (Hyunseok Ko), 조성범 (Sung Beom Cho)",
+      "title": "Establishment of a BaTiO3-based Computational Science Platform to Predict Multi-component Properties",
+      "authors": "Dong Geon Lee, Han Uk Lee, Won Bin Im, Hyunseok Ko, Sung Beom Cho",
       "venue": "Journal of Sensor Science and Technology 31 (5), 318-323",
       "date": null,
-      "first_authors": "이동건 (Dong Geon Lee)",
+      "first_authors": "Dong Geon Lee",
       "corresponding_authors": [
         "고현석 (Hyunseok Ko)",
-        "조성범 (Sung Beom Cho)"
+        "Sung Beom Cho"
       ],
       "url": "https://doi.org/10.46670/JSST.2022.31.5.318"
     },
