@@ -105,7 +105,7 @@ const memberOrder = [
 
 const memberTags = {
   "Hyunwoo Kim": ["DFT/MD", "Nucleation"],
-  "Hanwook Lee": ["DFT/MD", "AI"],
+  "Hanwook Lee": ["DFT/MD", "AI", "Nucleation"],
   "Minseong Kang": ["DFT/MD", "Continuum", "Nucleation"],
   "Dongwon Jeon": ["DFT/MD", "AI"],
   "Juhyun Ha": ["AI"],
@@ -276,8 +276,8 @@ export default function HomePage() {
       </section>
       <section className="section homeFocusSection">
         <div className="sectionHeader reveal-on-scroll">
-          <h2>Research Focus</h2>
-          <p className="sectionDescription">Students aligned by methodology focus.</p>
+          <h2>Research Groups</h2>
+          <p className="sectionDescription">Students grouped by core modeling approach.</p>
         </div>
         <div className="homeFocusGrid">
           {focusProfiles.map((group, index) => (
