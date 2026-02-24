@@ -1,4 +1,10 @@
-[
+﻿[
+  {
+    "date": "2026-02-23",
+    "title": "Spring Semester Event",
+    "description": "Lab dinner for the spring semester opening event with lab members.",
+    "image": "/images/Activities/2026.02.23.jpg"
+  },
   {
     "date": "2026-02-20",
     "title": "Graduation Ceremony",
@@ -53,8 +59,8 @@
   },
   {
     "date": "2025-03-01",
-    "title": "Spring Semester Kickoff",
-    "description": "Lab opening party for the start of the spring semester.",
+    "title": "Spring Semester Event",
+    "description": "Lab dinner for the spring semester opening event with lab members.",
     "image": "/images/Activities/2025.03.jpg"
   },
   {
@@ -94,3 +100,7 @@
     "image": "/images/Activities/2023.04.08.jpg"
   }
 ]
+
+
+
+
