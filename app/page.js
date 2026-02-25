@@ -50,8 +50,8 @@ const focusGroups = [
     )
   },
   {
-    key: "Continuum",
-    label: "Continuum",
+    key: "Multi-scale",
+    label: "Multi-scale",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path
@@ -106,16 +106,16 @@ const memberOrder = [
 const memberTags = {
   "Hyunwoo Kim": ["DFT/MD", "Nucleation"],
   "Hanwook Lee": ["DFT/MD", "AI", "Nucleation"],
-  "Minseong Kang": ["DFT/MD", "Continuum", "Nucleation"],
+  "Minseong Kang": ["DFT/MD", "Multi-scale", "Nucleation"],
   "Dongwon Jeon": ["DFT/MD", "AI"],
   "Juhyun Ha": ["AI"],
-  "Jeu Shin": ["DFT/MD", "Continuum"],
-  "Jonghun Seo": ["Continuum"],
-  "Junhyuk Kang": ["DFT/MD", "Continuum"],
+  "Jeu Shin": ["DFT/MD", "Multi-scale"],
+  "Jonghun Seo": ["Multi-scale"],
+  "Junhyuk Kang": ["DFT/MD", "Multi-scale"],
   "Jihoon Hong": ["DFT/MD", "AI"],
   "Jimin Kim": ["DFT/MD", "Nucleation"],
   "Jindong Hwang": ["DFT/MD", "AI", "Nucleation"],
-  "Jaeseok Hwang": ["Continuum"],
+  "Jaeseok Hwang": ["Multi-scale"],
   "Seojun Moon": ["DFT/MD", "Nucleation"],
   "Seongjun Kim": ["DFT/MD", "Nucleation"],
   "Jaehwang Kim": ["AI"],
