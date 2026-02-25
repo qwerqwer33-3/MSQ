@@ -43,9 +43,15 @@ const focusGroups = [
     label: "AI",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="7" y="7" width="10" height="10" rx="2" fill="none" stroke="currentColor" strokeWidth="1.6" />
-        <path d="M12 3v4M12 17v4M3 12h4M17 12h4" fill="none" stroke="currentColor" strokeWidth="1.6" />
-        <circle cx="12" cy="12" r="2.2" fill="currentColor" />
+        <rect x="6.5" y="6.5" width="11" height="11" rx="2.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
+        <path
+          d="M9 3.6v2.2M12 3.6v2.2M15 3.6v2.2M9 18.2v2.2M12 18.2v2.2M15 18.2v2.2M3.6 9h2.2M3.6 12h2.2M3.6 15h2.2M18.2 9h2.2M18.2 12h2.2M18.2 15h2.2"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.45"
+          strokeLinecap="round"
+        />
+        <text x="12" y="14.1" textAnchor="middle" fontSize="4.8" fontWeight="700" fill="currentColor">AI</text>
       </svg>
     )
   },
@@ -54,18 +60,9 @@ const focusGroups = [
     label: "Multi-scale",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path
-          d="M3 8c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.6"
-        />
-        <path
-          d="M3 16c2.5 0 2.5-2 5-2s2.5 2 5 2 2.5-2 5-2 2.5 2 5 2"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.6"
-        />
+        <rect x="3.3" y="5" width="17.4" height="3" rx="1.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
+        <rect x="5.2" y="10.5" width="13.6" height="3" rx="1.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
+        <rect x="7.1" y="16" width="9.8" height="3" rx="1.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
       </svg>
     )
   },
@@ -74,11 +71,10 @@ const focusGroups = [
     label: "Nucleation",
     icon: (
       <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
-        <circle cx="6" cy="8" r="1.5" fill="currentColor" />
-        <circle cx="18" cy="8" r="1.5" fill="currentColor" />
-        <circle cx="6" cy="16" r="1.5" fill="currentColor" />
-        <circle cx="18" cy="16" r="1.5" fill="currentColor" />
+        <ellipse cx="12" cy="12" rx="7.5" ry="3.4" fill="none" stroke="currentColor" strokeWidth="1.5" />
+        <ellipse cx="12" cy="12" rx="7.5" ry="3.4" transform="rotate(60 12 12)" fill="none" stroke="currentColor" strokeWidth="1.5" />
+        <ellipse cx="12" cy="12" rx="7.5" ry="3.4" transform="rotate(-60 12 12)" fill="none" stroke="currentColor" strokeWidth="1.5" />
+        <circle cx="12" cy="12" r="2" fill="currentColor" />
       </svg>
     )
   }
@@ -114,7 +110,7 @@ const memberTags = {
   "Junhyuk Kang": ["DFT/MD", "Multi-scale"],
   "Jihoon Hong": ["DFT/MD", "AI"],
   "Jimin Kim": ["DFT/MD", "Nucleation"],
-  "Jindong Hwang": ["DFT/MD", "AI", "Nucleation"],
+  "Jindong Hwang": ["DFT/MD", "AI"],
   "Jaeseok Hwang": ["Multi-scale"],
   "Seojun Moon": ["DFT/MD", "Nucleation"],
   "Seongjun Kim": ["DFT/MD", "Nucleation"],
@@ -129,7 +125,10 @@ export default function HomePage() {
   const memberMap = new Map(members.map((member) => [member.name, member]));
   const focusProfiles = focusGroups.map((group) => {
     const people = memberOrder
-      .filter((name) => (memberTags[name] || []).includes(group.key))
+      .filter((name) => {
+        const member = memberMap.get(name);
+        return member && member.category !== "Alumni" && (memberTags[name] || []).includes(group.key);
+      })
       .map((name) => memberMap.get(name))
       .filter(Boolean);
     return { ...group, people };
