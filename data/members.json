@@ -5,6 +5,7 @@
         "role":  "Postdoctoral Researcher",
         "affiliation":  "LAMP, Ajou University",
         "email":  "khw93@ajou.ac.kr",
+        "scholar_url":  "https://scholar.google.co.kr/citations?user=K-JYfggAAAAJ&hl=ko&oi=ao",
         "photo":  "/images/members/hyunwoo_kim.jpg",
         "education":  [
                           "Ph.D., Materials Science and Engineering, Hanyang University (Advisor: Yongjae Jung)"
@@ -14,9 +15,16 @@
                          "Nuclear-generation simulation workflows."
                      ],
         "application":  "Semiconductor / Energy Materials",
+        "applicationDetails":  [
+                                   "Semiconductor",
+                                   "Energy Materials"
+                               ],
+        "applicationLabel":  "Research Interests",
+        "summaryTags":  [
+                            "Nucleation"
+                        ],
         "methodology":  [
-                            "Functional semiconductor and display materials R\u0026D.",
-                            "Nuclear-generation simulation workflows."
+                            "Nucleation"
                         ]
     },
     {
