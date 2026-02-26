@@ -21,35 +21,46 @@
     },
     {
         "name":  "Hanwook Lee",
-        "category":  "Ph.D.",
-        "role":  "Ph.D. Candidate",
+        "category":  "Integrated Ph.D.",
+        "role":  "Ph.D. Student",
         "titleBadge":  "Lab Manager",
         "affiliation":  "Energy Systems Research, Ajou University",
         "email":  "lhu@ajou.ac.kr",
+        "scholar_url":  "https://scholar.google.co.kr/citations?user=9YJA3QcAAAAJ&hl=ko",
         "photo":  "/images/members/hanwook_lee.jpg",
         "education":  [
-                          "Ph.D. candidate, Energy Systems Research, Ajou University"
+                          "2022.09 - Present: Integrated Ph.D. student, Department of Energy Systems, Ajou University"
                       ],
         "research":  [
-                         "First-principles modeling for functional semiconductors and solid-state electrolytes.",
-                         "Machine-learning-driven molecular dynamics for nuclear generation."
+                         "Polymorphism",
+                         "Synthesizability",
+                         "Nucleation"
                      ],
-        "application":  "Semiconductor / Battery / Energy Materials",
+        "applicationDetails":  [
+                                   "Polymorphism",
+                                   "Synthesizability",
+                                   "Nucleation"
+                               ],
+        "applicationLabel":  "Research Interests",
+        "summaryTags":  [
+                            "DFT/MD",
+                            "Metadynamics"
+                        ],
         "methodology":  [
-                            "First-principles modeling for functional semiconductors and solid-state electrolytes.",
-                            "Machine-learning-driven molecular dynamics for nuclear generation."
+                            "DFT/MD",
+                            "Metadynamics"
                         ]
     },
     {
         "name":  "Minseong Kang",
         "category":  "Ph.D.",
-        "role":  "Ph.D. Candidate",
+        "role":  "Ph.D. Student",
         "affiliation":  "Energy Systems Research, Ajou University",
         "email":  "kkkb2573@ajou.ac.kr",
         "scholar_url":  "https://scholar.google.co.kr/citations?user=JpJJX_IAAAAJ&hl=ko",
         "photo":  "/images/members/minseong_kang.png",
         "education":  [
-                          "2022.09 - Present: Integrated Ph.D. candidate, Department of Energy Systems, Ajou University"
+                          "2022.09 - Present: Integrated Ph.D. student, Department of Energy Systems, Ajou University"
                       ],
         "research":  [
                          "Energy harvester, semiconductor device, and battery process simulations.",
@@ -80,34 +91,45 @@
     },
     {
         "name":  "Dongwon Jeon",
-        "category":  "Ph.D.",
-        "role":  "Ph.D. Candidate",
-        "affiliation":  "Energy Systems Research, Ajou University",
+        "category":  "Integrated Ph.D.",
+        "role":  "Ph.D. Student",
+        "affiliation":  "Department of Energy Systems Research, Ajou University",
         "email":  "jdwjyl2007@ajou.ac.kr",
+        "scholar_url":  "https://scholar.google.co.kr/citations?user=SaKLKcgAAAAJ&hl=ko&oi=ao",
         "photo":  "/images/members/dongwon_jeon.jpg",
         "education":  [
-                          "Ph.D. candidate, Energy Systems Research, Ajou University",
-                          "B.S., Advanced Materials Science and Engineering, Ajou University"
+                          "2023.03 - Present: Integrated Ph.D. Student, Department of Energy Systems Research, Ajou University"
                       ],
         "research":  [
-                         "Solid-state electrolyte batteries and electronic materials simulations.",
-                         "NLP-based synthesis workflow text mining."
+                         "Topological materials",
+                         "Solid-state electrolyte",
+                         "Inorganic synthesis prediction"
                      ],
-        "application":  "Semiconductor / Battery",
+        "application":  "Topological materials / Solid-state electrolyte / Inorganic synthesis prediction",
+        "applicationDetails":  [
+                                   "Topological materials",
+                                   "Solid-state electrolyte",
+                                   "Inorganic synthesis prediction"
+                               ],
+        "applicationLabel":  "Research Interests",
+        "summaryTags":  [
+                            "DFT",
+                            "LLM"
+                        ],
         "methodology":  [
-                            "Solid-state electrolyte batteries and electronic materials simulations.",
-                            "NLP-based synthesis workflow text mining."
+                            "DFT",
+                            "LLM"
                         ]
     },
     {
         "name":  "Juhyun Ha",
         "category":  "Integrated Ph.D.",
-        "role":  "Integrated Ph.D. Candidate",
+        "role":  "Integrated Ph.D. Student",
         "affiliation":  "Energy Systems Research, Ajou University",
         "email":  "hajujuha@ajou.ac.kr",
         "photo":  "/images/members/juhyun_ha.png",
         "education":  [
-                          "Integrated Ph.D. candidate, Energy Systems Research, Ajou University",
+                          "Integrated Ph.D. student, Energy Systems Research, Ajou University",
                           "B.S., Materials Systems Engineering, Pukyong National University"
                       ],
         "research":  [
@@ -123,14 +145,14 @@
     {
         "name":  "Jeu Shin",
         "category":  "Integrated Ph.D.",
-        "role":  "Integrated Ph.D. Candidate",
+        "role":  "Integrated Ph.D. Student",
         "affiliation":  "Energy Systems Research, Ajou University",
         "email":  "jshin01@ajou.ac.kr",
         "website":  "https://qwerqwer33-3.github.io/J.Shin/#/",
         "scholar_url":  "https://scholar.google.com/citations?user=PYnRaHYAAAAJ&hl=ko&oi=ao",
         "photo":  "/images/members/jeu_shin.jpg",
         "education":  [
-                          "2026.03 - Present: Integrated Ph.D. candidate, Energy Systems Research, Ajou University",
+                          "2026.03 - Present: Integrated Ph.D. student, Energy Systems Research, Ajou University",
                           "2020.03 - 2024.08: B.S., Mechanical Engineering, Hanbat National University"
                       ],
         "research":  [
@@ -165,12 +187,12 @@
     {
         "name":  "Jonghun Seo",
         "category":  "Integrated Ph.D.",
-        "role":  "Integrated Ph.D. Candidate",
+        "role":  "Integrated Ph.D. Student",
         "affiliation":  "Energy Systems Research, Ajou University",
         "email":  "sjh99@ajou.ac.kr",
         "photo":  "/images/members/jonghun_seo.png",
         "education":  [
-                          "Integrated Ph.D. candidate, Energy Systems Research, Ajou University",
+                          "Integrated Ph.D. student, Energy Systems Research, Ajou University",
                           "B.S., Materials Science and Engineering, Kumoh National Institute of Technology"
                       ],
         "research":  [
@@ -204,12 +226,12 @@
     {
         "name":  "Jihoon Hong",
         "category":  "Masters",
-        "role":  "M.S. Candidate",
+        "role":  "M.S. Student",
         "affiliation":  "Energy Systems Research, Ajou University",
         "email":  "blueper2000@ajou.ac.kr",
         "photo":  "/images/members/jihoon_hong.jpg",
         "education":  [
-                          "M.S. candidate, Energy Systems Research, Ajou University",
+                          "M.S. student, Energy Systems Research, Ajou University",
                           "B.S., Advanced Materials Science and Engineering, Ajou University"
                       ],
         "research":  [
@@ -225,12 +247,12 @@
     {
         "name":  "Jimin Kim",
         "category":  "Masters",
-        "role":  "M.S. Candidate",
+        "role":  "M.S. Student",
         "affiliation":  "Energy Systems Research, Ajou University",
         "email":  "kjmkjm7230@ajou.ac.kr",
         "photo":  "/images/members/jimin_kim.png",
         "education":  [
-                          "M.S. candidate, Energy Systems Research, Ajou University",
+                          "M.S. student, Energy Systems Research, Ajou University",
                           "B.S., Advanced Materials Science and Engineering, Ajou University"
                       ],
         "research":  [
@@ -246,12 +268,12 @@
     {
         "name":  "Jindong Hwang",
         "category":  "Masters",
-        "role":  "M.S. Candidate",
+        "role":  "M.S. Student",
         "affiliation":  "AI and Advanced Materials Science, Ajou University",
         "email":  "wlsehd949@ajou.ac.kr",
         "photo":  "/images/members/jindong_hwang.png",
         "education":  [
-                          "2026.03 - Present: M.S. candidate, Artificial Intelligence, Ajou University",
+                          "2026.03 - Present: M.S. student, Artificial Intelligence, Ajou University",
                           "2022.03 - 2026.02: B.S., Advanced Materials Science and Engineering, Ajou University"
                       ],
         "research":  [
@@ -276,7 +298,7 @@
         "email":  "issac2002@ajou.ac.kr",
         "photo":  "/images/members/jaeseok_hwang.png",
         "education":  [
-                          "B.S. candidate, Advanced Materials Science and Engineering, Ajou University"
+                          "B.S. student, Advanced Materials Science and Engineering, Ajou University"
                       ],
         "research":  [
                          "First-principles and molecular dynamics for nuclear generation research.",
@@ -296,7 +318,7 @@
         "email":  "intellmoon@ajou.ac.kr",
         "photo":  "/images/members/seojun_moon.png",
         "education":  [
-                          "B.S. candidate, Advanced Materials Science and Engineering, Ajou University"
+                          "B.S. student, Advanced Materials Science and Engineering, Ajou University"
                       ],
         "research":  [
                          "First-principles and molecular dynamics for nuclear generation."
@@ -314,7 +336,7 @@
         "email":  "kimsj1017@ajou.ac.kr",
         "photo":  "/images/members/seongjun_kim.jpg",
         "education":  [
-                          "B.S. candidate, Advanced Materials Science and Engineering, Ajou University"
+                          "B.S. student, Advanced Materials Science and Engineering, Ajou University"
                       ],
         "research":  [
                          "First-principles calculations for interconnect materials."
@@ -332,14 +354,14 @@
         "email":  "jaehwang3183@ajou.ac.kr",
         "photo":  "/images/members/jaehwang_kim.jpg",
         "education":  [
-                          "2021.02 - Present: B.S., Materials Science and Engineering, Ajou University"
+                          "2021.03 - Present: B.S. student, Materials Science and Engineering, Ajou University"
                       ],
         "research":  [
-                         "LLM for materials science."
+                         "High-Entropy Materials Synthesis Recipe Generator"
                      ],
-        "application":  "Battery",
+        "application":  "High-Entropy Materials Synthesis Recipe Generator",
         "applicationDetails":  [
-                                   "Battery"
+                                   "High-Entropy Materials Synthesis Recipe Generator"
                                ],
         "applicationLabel":  "Research Interests",
         "summaryTags":  [
@@ -354,7 +376,7 @@
         "email":  "aasdfp00372@ajou.ac.kr",
         "photo":  "/images/members/jaeseon_yoo.png",
         "education":  [
-                          "B.S. candidate, Advanced Materials Science and Engineering, Ajou University"
+                          "B.S. student, Advanced Materials Science and Engineering, Ajou University"
                       ],
         "research":  [
                          "First-principles calculations for interconnect materials."
@@ -549,7 +571,7 @@
         "email":  "kghkai1807@ajou.ac.kr",
         "photo":  "/images/members/gihwan_kim.png",
         "education":  [
-                          "B.S. candidate, Advanced Materials Science and Engineering, Ajou University (double major in Software)"
+                          "B.S. student, Advanced Materials Science and Engineering, Ajou University (double major in Software)"
                       ],
         "research":  [
                          "Nucleation research using first-principles and molecular dynamics.",
@@ -562,3 +584,4 @@
                         ]
     }
 ]
+

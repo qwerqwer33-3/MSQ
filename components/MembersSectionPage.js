@@ -10,9 +10,9 @@ const currentSectionOrder = [
   {
     id: "phd",
     keys: ["Ph.D.", "Integrated Ph.D."],
-    label: "Ph.D. / Integrated Ph.D. Candidates"
+    label: "Ph.D. / Integrated Ph.D. Students"
   },
-  { id: "masters", keys: ["Masters"], label: "M.S. Candidates" },
+  { id: "masters", keys: ["Masters"], label: "M.S. Students" },
   { id: "undergrad", keys: ["Undergrad"], label: "Undergraduates" }
 ];
 
