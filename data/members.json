@@ -376,14 +376,23 @@
         "email":  "aasdfp00372@ajou.ac.kr",
         "photo":  "/images/members/jaeseon_yoo.png",
         "education":  [
-                          "B.S. student, Advanced Materials Science and Engineering, Ajou University"
+                          "2022.03 - Present: B.S. student, Materials Science and Engineering, Ajou University"
                       ],
         "research":  [
-                         "First-principles calculations for interconnect materials."
+                         "Topological materials",
+                         "Post-Cu interconnect materials"
                      ],
-        "application":  "Semiconductor",
+        "application":  "Topological materials / Post-Cu interconnect materials",
+        "applicationDetails":  [
+                                   "Topological materials",
+                                   "Post-Cu interconnect materials"
+                               ],
+        "applicationLabel":  "Research Interests",
+        "summaryTags":  [
+                            "DFT"
+                        ],
         "methodology":  [
-                            "First-principles calculations for interconnect materials."
+                            "DFT"
                         ]
     },
     {
