@@ -16,7 +16,7 @@ export default function Footer() {
             <div className="footerBlock">
               <div className="footerLabel">Address</div>
               <div className="footerValue">
-                Room 203, Seogwan Building, Ajou University, 206 Worldcup-ro, Yeongtong-gu,
+                Room 203, West Hall, Ajou University, 206 Worldcup-ro, Yeongtong-gu,
                 Suwon 16499, Republic of Korea
               </div>
             </div>

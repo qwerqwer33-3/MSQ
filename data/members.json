@@ -196,19 +196,28 @@
         "name":  "Jonghun Seo",
         "category":  "Integrated Ph.D.",
         "role":  "Integrated Ph.D. Student",
-        "affiliation":  "Energy Systems Research, Ajou University",
+        "affiliation":  "Department of Energy Systems Research, Ajou University",
         "email":  "sjh99@ajou.ac.kr",
         "photo":  "/images/members/jonghun_seo.png",
         "education":  [
-                          "Integrated Ph.D. student, Energy Systems Research, Ajou University",
-                          "B.S., Materials Science and Engineering, Kumoh National Institute of Technology"
+                          "2026.03 - Present: Integrated Ph.D. Student, Department of Energy Systems Research, Ajou University",
+                          "2018.03 - 2024.02: B.S., Materials Science and Engineering, Kumoh National Institute of Technology"
                       ],
         "research":  [
-                         "Semiconductor device simulations."
+                         "Semiconductor process",
+                         "Semiconductor materials"
                      ],
-        "application":  "Semiconductor",
+        "application":  "Semiconductor process / Semiconductor materials",
+        "applicationDetails":  [
+                                   "Semiconductor process",
+                                   "Semiconductor materials"
+                               ],
+        "applicationLabel":  "Research Interests",
+        "summaryTags":  [
+                            "FEM"
+                        ],
         "methodology":  [
-                            "Semiconductor device simulations."
+                            "FEM"
                         ]
     },
     {
@@ -324,16 +333,30 @@
         "role":  "Undergraduate Research Intern",
         "affiliation":  "Advanced Materials Science and Engineering, Ajou University",
         "email":  "intellmoon@ajou.ac.kr",
+        "website":  "https://github.com/sacRedeeRhoRn",
         "photo":  "/images/members/seojun_moon.png",
         "education":  [
-                          "B.S. student, Advanced Materials Science and Engineering, Ajou University"
+                          "2021.03 - Present: B.S. student, Advanced Materials Science and Engineering, Ajou University"
                       ],
         "research":  [
-                         "First-principles and molecular dynamics for nuclear generation."
+                         "Interface stability",
+                         "Nucleation",
+                         "Diffusion controlled solid state"
                      ],
-        "application":  "Energy Materials",
+        "application":  "Interface stability / Nucleation / Diffusion controlled solid state",
+        "applicationDetails":  [
+                                   "Interface stability",
+                                   "Nucleation",
+                                   "Diffusion controlled solid state"
+                               ],
+        "applicationLabel":  "Research Interests",
+        "summaryTags":  [
+                            "DFT",
+                            "MD"
+                        ],
         "methodology":  [
-                            "First-principles and molecular dynamics for nuclear generation."
+                            "DFT",
+                            "MD"
                         ]
     },
     {
@@ -362,7 +385,7 @@
         "email":  "jaehwang3183@ajou.ac.kr",
         "photo":  "/images/members/jaehwang_kim.jpg",
         "education":  [
-                          "2021.03 - Present: B.S. student, Materials Science and Engineering, Ajou University"
+                          "2021.03 - Present: B.S. student, Advanced Materials Science and Engineering, Ajou University"
                       ],
         "research":  [
                          "High-Entropy Materials Synthesis Recipe Generator"
@@ -384,7 +407,7 @@
         "email":  "aasdfp00372@ajou.ac.kr",
         "photo":  "/images/members/jaeseon_yoo.png",
         "education":  [
-                          "2022.03 - Present: B.S. student, Materials Science and Engineering, Ajou University"
+                          "2022.03 - Present: B.S. student, Advanced Materials Science and Engineering, Ajou University"
                       ],
         "research":  [
                          "Topological materials",
