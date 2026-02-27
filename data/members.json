@@ -17,14 +17,15 @@
         "application":  "Semiconductor / Energy Materials",
         "applicationDetails":  [
                                    "Semiconductor",
-                                   "Energy Materials"
+                                   "Energy Materials",
+                                   "Nucleation"
                                ],
         "applicationLabel":  "Research Interests",
         "summaryTags":  [
-                            "Nucleation"
+                            "DFT/MD"
                         ],
         "methodology":  [
-                            "Nucleation"
+                            "DFT/MD"
                         ]
     },
     {
@@ -391,12 +392,10 @@
                                ],
         "applicationLabel":  "Research Interests",
         "summaryTags":  [
-                            "DFT",
-                            "MD"
+                            "DFT/MD"
                         ],
         "methodology":  [
-                            "DFT",
-                            "MD"
+                            "DFT/MD"
                         ]
     },
     {
