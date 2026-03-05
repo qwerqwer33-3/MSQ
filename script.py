@@ -17,7 +17,7 @@ members = [
     ]
   },
   {
-    "name": "Hanwook Lee",
+    "name": "Han Uk Lee",
     "category": "Ph.D.",
     "role": "Ph.D. Candidate",
     "affiliation": "Energy Systems Research, Ajou University",
@@ -47,7 +47,7 @@ members = [
     ]
   },
   {
-    "name": "Dongwon Jeon",
+    "name": "Dong Won Jeon",
     "category": "Ph.D.",
     "role": "Ph.D. Candidate",
     "affiliation": "Energy Systems Research, Ajou University",
@@ -85,7 +85,7 @@ members = [
     "affiliation": "Energy Systems Research, Ajou University",
     "email": "colorcircle33@gmail.com",
     "website": "https://qwerqwer33-3.github.io/J.Shin/#/",
-    "photo": "/images/members/신제우_증명사진.jpg",
+    "photo": "/images/members/?�제??증명?�진.jpg",
     "education": [
       "2026.03 - Present: Integrated Ph.D. course, Energy Systems Research, Ajou University",
       "2020.03 - 2024.08: B.S., Mechanical Engineering, Hanbat National University"
@@ -127,7 +127,7 @@ members = [
     ]
   },
   {
-    "name": "Jihoon Hong",
+    "name": "Ji Hoon Hong",
     "category": "Masters",
     "role": "Master's Student",
     "affiliation": "Energy Systems Research, Ajou University",
