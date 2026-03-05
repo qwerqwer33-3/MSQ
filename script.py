@@ -2,7 +2,7 @@ import json
 
 members = [
   {
-    "name": "Hyunwoo Kim",
+    "name": "Hyeon Woo Kim",
     "category": "Postdoc",
     "role": "Postdoctoral Researcher",
     "affiliation": "LAMP, Ajou University",
@@ -32,7 +32,7 @@ members = [
     ]
   },
   {
-    "name": "Minseong Kang",
+    "name": "Min Sung Kang",
     "category": "Ph.D.",
     "role": "Ph.D. Candidate",
     "affiliation": "Energy Systems Research, Ajou University",
@@ -85,7 +85,7 @@ members = [
     "affiliation": "Energy Systems Research, Ajou University",
     "email": "colorcircle33@gmail.com",
     "website": "https://qwerqwer33-3.github.io/J.Shin/#/",
-    "photo": "/images/members/?�제??증명?�진.jpg",
+    "photo": "/images/members/?�제??증명?�진.jpg",
     "education": [
       "2026.03 - Present: Integrated Ph.D. course, Energy Systems Research, Ajou University",
       "2020.03 - 2024.08: B.S., Mechanical Engineering, Hanbat National University"

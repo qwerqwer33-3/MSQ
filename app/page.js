@@ -81,9 +81,9 @@ const focusGroups = [
 ];
 
 const memberOrder = [
-  "Hyunwoo Kim",
+  "Hyeon Woo Kim",
   "Han Uk Lee",
-  "Minseong Kang",
+  "Min Sung Kang",
   "Dong Won Jeon",
   "Juhyun Ha",
   "Jeu Shin",
@@ -100,9 +100,9 @@ const memberOrder = [
 ];
 
 const memberTags = {
-  "Hyunwoo Kim": ["DFT/MD", "Nucleation"],
+  "Hyeon Woo Kim": ["DFT/MD", "Nucleation"],
   "Han Uk Lee": ["DFT/MD", "AI", "Nucleation"],
-  "Minseong Kang": ["DFT/MD", "Multi-scale", "Nucleation"],
+  "Min Sung Kang": ["DFT/MD", "Multi-scale", "Nucleation"],
   "Dong Won Jeon": ["DFT/MD", "AI"],
   "Juhyun Ha": ["AI"],
   "Jeu Shin": ["DFT/MD", "Multi-scale"],
