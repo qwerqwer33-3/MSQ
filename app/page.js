@@ -94,7 +94,7 @@ const memberOrder = [
   "Jindong Hwang",
   "Jaeseok Hwang",
   "Seojun Moon",
-  "Seongjun Kim",
+  "Sungjun Kim",
   "Jaehwang Kim",
   "Jaeseon Yoo"
 ];
@@ -113,7 +113,7 @@ const memberTags = {
   "Jindong Hwang": ["DFT/MD", "AI"],
   "Jaeseok Hwang": ["Multi-scale"],
   "Seojun Moon": ["DFT/MD", "Nucleation"],
-  "Seongjun Kim": ["DFT/MD", "Nucleation"],
+  "Sungjun Kim": ["DFT/MD", "Nucleation"],
   "Jaehwang Kim": ["AI"],
   "Jaeseon Yoo": ["DFT/MD", "Nucleation"]
 };
