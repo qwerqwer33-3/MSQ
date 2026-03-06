@@ -529,6 +529,37 @@ h2{font-size:28px;margin:10px 0 12px;}
 .authorHighlight{font-weight:700;color:var(--text);text-decoration:underline;text-underline-offset:2px;}
 .authorAsterisk{text-decoration:none;}
 .authorMarker{text-decoration:none;margin-left:1px;}
+.newsSection{padding-top:0;}
+.newsSimple{
+  padding:16px 18px;
+}
+.newsSimpleItem{
+  margin:0;
+  display:grid;
+  gap:4px;
+}
+.newsSimpleHead{
+  margin:0;
+  display:flex;
+  align-items:baseline;
+  gap:8px;
+}
+.newsSimpleTitle{
+  font-size:1.02rem;
+  font-weight:700;
+  color:#0f172a;
+}
+.newsSimpleText{
+  margin:0;
+  color:#334155;
+  line-height:1.7;
+  font-size:1rem;
+}
+.newsSimpleDate{
+  font-weight:700;
+  color:#1d4ed8;
+  font-variant-numeric:tabular-nums;
+}
 .citationMeta{margin-top:8px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--muted);font-size:0.9rem;}
 .citationBadge{background:rgba(37,99,235,0.12);border:1px solid rgba(37,99,235,0.35);color:#1d4ed8;padding:3px 8px;border-radius:999px;font-size:12px;font-weight:600;}
 @keyframes heroSlides{0%{transform:translateX(0);}100%{transform:translateX(-500%);}}
@@ -1136,6 +1167,9 @@ nextjs-portal{display:none!important;}
   .piContactLine{grid-template-columns:1fr;gap:4px;}
   .piAwardsItem{grid-template-columns:1fr;gap:6px;}
   .piTimelineItem{grid-template-columns:1fr;gap:6px;}
+  .newsSimple{
+    padding:16px;
+  }
 }
 @media (max-width: 560px){
   .homeFocusGrid{grid-template-columns:1fr;}

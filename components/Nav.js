@@ -11,7 +11,7 @@ const links = [
   // { href: "/members2", label: "Members 2" },
   { href: "/outcomes", label: "Outcomes" },
   { href: "/activities", label: "Activities" },
-  { href: "/contact", label: "Contact" }
+  { href: "/news", label: "News" }
 ];
 
 export default function Nav() {
