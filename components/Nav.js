@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { withBasePath } from "../lib/basePath";
 
@@ -10,6 +11,7 @@ const links = [
   { href: "/members", label: "Members" },
   // { href: "/members2", label: "Members 2" },
   { href: "/outcomes", label: "Outcomes" },
+  { href: "/counterpart", label: "Counterpart" },
   { href: "/activities", label: "Activities" },
   { href: "/news", label: "News" }
 ];
@@ -42,26 +44,27 @@ export default function Nav() {
   return (
     <header className="navbar">
       <div className="container navInner">
-        <a className="navBrand" href={withBasePath("/")}>
+        <Link className="navBrand" href="/">
           <img
             className="navLogo"
             src={withBasePath("/logo-msq.svg")}
             width="32"
             height="32"
             alt="MSQ Lab logo"
+            decoding="async"
           />
           <span>MSQ Lab</span>
-        </a>
+        </Link>
         <nav className="navLinks">
           {links.map((l) => (
-            <a
+            <Link
               key={l.href}
-              href={withBasePath(l.href)}
+              href={l.href}
               className={isActiveLink(l.href) ? "isActive" : ""}
               aria-current={isActiveLink(l.href) ? "page" : undefined}
             >
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>

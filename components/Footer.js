@@ -8,7 +8,12 @@ export default function Footer() {
         <div className="footerTop">
           <div className="footerBrand">
             <div className="footerLogo">
-              <img src={withBasePath("/images/Home/ajou_logo.png")} alt="Ajou University logo" />
+              <img
+                src={withBasePath("/images/Home/ajou_logo.png")}
+                alt="Ajou University logo"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div className="footerTitle">Materials Modeling Laboratory, Ajou University</div>
           </div>

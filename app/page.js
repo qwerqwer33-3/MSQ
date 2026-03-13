@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { withBasePath } from "../lib/basePath";
 import members from "../data/members.json";
 
@@ -8,32 +8,32 @@ const slides = [
   {
     title: "Battery Safety Modeling",
     description: "Thermo-electro-mechanical coupling for runaway prevention.",
-    image: "/images/Home/Research_1.png"
+    image: "/images/Home/Research_1.opt.jpg"
   },
   {
     title: "Semiconductor Materials",
     description: "Atomic-scale modeling of oxide and dielectric stacks.",
-    image: "/images/Home/Research_2.png"
+    image: "/images/Home/Research_2.opt.jpg"
   },
   {
     title: "AI-assisted Discovery",
     description: "Machine-learned potentials accelerate screening.",
-    image: "/images/Home/Research_3.png"
+    image: "/images/Home/Research_3.opt.jpg"
   },
   {
     title: "Process & Manufacturing",
     description: "Simulation-guided electrode and device fabrication.",
-    image: "/images/Home/Research_4.png"
+    image: "/images/Home/Research_4.opt.jpg"
   },
   {
     title: "Multiphysics Devices",
     description: "Coupled electro-thermal-mechanical device simulations.",
-    image: "/images/Home/Research_5.png"
+    image: "/images/Home/Research_5.opt.jpg"
   },
   {
     title: "Energy Harvesting Systems",
     description: "Modeling low-power nodes from triboelectrics to thermoelectrics.",
-    image: "/images/Home/Research_6.png"
+    image: "/images/Home/Research_6.opt.jpg"
   }
 ];
 
@@ -95,7 +95,6 @@ const memberOrder = [
   "Jaeseok Hwang",
   "Seojun Moon",
   "Sungjun Kim",
-  "Jaehwang Kim",
   "Jaeseon Yoo"
 ];
 
@@ -114,25 +113,38 @@ const memberTags = {
   "Jaeseok Hwang": ["Multi-scale"],
   "Seojun Moon": ["DFT/MD", "Nucleation"],
   "Sungjun Kim": ["DFT/MD", "Nucleation"],
-  "Jaehwang Kim": ["AI"],
   "Jaeseon Yoo": ["DFT/MD", "Nucleation"]
 };
+
+const memberMap = new Map(members.map((member) => [member.name, member]));
+
+const focusProfiles = focusGroups.map((group) => {
+  const people = memberOrder
+    .filter((name) => {
+      const member = memberMap.get(name);
+      return member && member.category !== "Alumni" && (memberTags[name] || []).includes(group.key);
+    })
+    .map((name) => memberMap.get(name))
+    .filter(Boolean);
+  return { ...group, people };
+});
 
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [showWelcome, setShowWelcome] = useState(true);
-  const memberMap = new Map(members.map((member) => [member.name, member]));
-  const focusProfiles = focusGroups.map((group) => {
-    const people = memberOrder
-      .filter((name) => {
-        const member = memberMap.get(name);
-        return member && member.category !== "Alumni" && (memberTags[name] || []).includes(group.key);
-      })
-      .map((name) => memberMap.get(name))
-      .filter(Boolean);
-    return { ...group, people };
+  const [loadedSlideIndexes, setLoadedSlideIndexes] = useState(() => {
+    const initialIndexes = new Set([0]);
+    if (slides.length > 1) {
+      initialIndexes.add(1);
+    }
+    return initialIndexes;
   });
+
+  const loadedSlides = useMemo(
+    () => slides.map((slide, index) => ({ ...slide, shouldLoad: loadedSlideIndexes.has(index) })),
+    [loadedSlideIndexes]
+  );
 
   const goPrev = () => {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
@@ -149,6 +161,19 @@ export default function HomePage() {
     }, 5000);
     return () => clearInterval(interval);
   }, [isPaused]);
+
+  useEffect(() => {
+    const nextIndex = (currentIndex + 1) % slides.length;
+    setLoadedSlideIndexes((prev) => {
+      if (prev.has(currentIndex) && prev.has(nextIndex)) {
+        return prev;
+      }
+      const next = new Set(prev);
+      next.add(currentIndex);
+      next.add(nextIndex);
+      return next;
+    });
+  }, [currentIndex]);
 
   useEffect(() => {
     const elements = document.querySelectorAll(".reveal-on-scroll");
@@ -248,14 +273,27 @@ export default function HomePage() {
                 </button>
               </div>
               <div className="sliderTrack">
-                {slides.map((slide, index) => (
+                {loadedSlides.map((slide, index) => {
+                  // Ensure direct dot/arrow jumps never render an empty active slide.
+                  const shouldLoad = slide.shouldLoad || index === currentIndex;
+                  const isPrioritySlide = index === 0 || index === currentIndex;
+                  return (
                   <div
                     className={`slide${index === currentIndex ? " isActive" : ""}`}
                     key={slide.title}
                   >
-                    <img src={withBasePath(slide.image)} alt={slide.title} />
+                    {shouldLoad ? (
+                      <img
+                        src={withBasePath(slide.image)}
+                        alt={slide.title}
+                        loading={isPrioritySlide ? "eager" : "lazy"}
+                        decoding="async"
+                        fetchPriority={isPrioritySlide ? "high" : "auto"}
+                      />
+                    ) : null}
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
             <div className="sliderDots" aria-label="Slideshow pagination">
@@ -294,7 +332,7 @@ export default function HomePage() {
               <div className="homeFocusAvatars">
                 {group.people.map((person) => (
                   <div className="homeFocusAvatar" key={`${group.key}-${person.name}`}>
-                    <img src={withBasePath(person.photo)} alt={person.name} />
+                    <img src={withBasePath(person.photo)} alt={person.name} loading="lazy" decoding="async" />
                   </div>
                 ))}
               </div>

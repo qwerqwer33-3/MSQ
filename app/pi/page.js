@@ -51,7 +51,7 @@ export default function PIPage() {
             <Card>
               <div className="piHeader">
                 <div className="piPhoto">
-                  <img src={withBasePath(pi.photo)} alt={pi.name} />
+                  <img src={withBasePath(pi.photo)} alt={pi.name} loading="eager" decoding="async" />
                 </div>
                 <div className="piHeaderInfo">
                   <h2 className="piName">{pi.name}</h2>

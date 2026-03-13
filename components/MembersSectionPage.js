@@ -1,6 +1,7 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import members from "../data/members.json";
 import Card from "./Card";
 import { withBasePath } from "../lib/basePath";
@@ -19,6 +20,157 @@ const currentSectionOrder = [
 const alumniSectionOrder = [
   { id: "alumni", keys: ["Alumni"], label: "Alumni" }
 ];
+
+const alumniCareerTrackConfig = {
+  academia: {
+    key: "academia",
+    label: "Academia",
+    color: "#5568a6"
+  },
+  graduate: {
+    key: "graduate",
+    label: "Study",
+    color: "#5f8f76"
+  },
+  research: {
+    key: "research",
+    label: "Research",
+    color: "#8577ba"
+  },
+  industry: {
+    key: "industry",
+    label: "Industry",
+    color: "#ce8050"
+  },
+  exploring: {
+    key: "exploring",
+    label: "Exploring",
+    color: "#92a0b3"
+  }
+};
+
+const alumniCareerTrackOrder = ["academia", "research", "graduate", "industry", "exploring"];
+
+const alumniCareerTrackManualByName = {
+  "Junhyuk Kang": "industry",
+  "Jun Hyuk Kang": "industry",
+  "Hyunseok Ko": "research",
+  "Giulio Fatti": "academia",
+  "Upendra Kumar": "research",
+  "Donggeon Lee": "industry",
+  "Sangmin Jeong": "industry",
+  "Sanggu Lee": "industry",
+  "Yujeong Park": "industry",
+  "Woongchan Kim": "industry",
+  "Suyeon Jang": "graduate",
+  "Gihwan Kim": "exploring"
+};
+
+function getManualCareerTrackByName(name) {
+  const normalizedName = (name || "").trim();
+  return alumniCareerTrackManualByName[normalizedName] || null;
+}
+
+function hexToRgba(hex, alpha) {
+  if (typeof hex !== "string") {
+    return `rgba(15, 23, 42, ${alpha})`;
+  }
+  const cleaned = hex.trim().replace("#", "");
+  const normalized =
+    cleaned.length === 3
+      ? cleaned
+          .split("")
+          .map((ch) => `${ch}${ch}`)
+          .join("")
+      : cleaned;
+  if (!/^[0-9a-fA-F]{6}$/.test(normalized)) {
+    return `rgba(15, 23, 42, ${alpha})`;
+  }
+  const r = parseInt(normalized.slice(0, 2), 16);
+  const g = parseInt(normalized.slice(2, 4), 16);
+  const b = parseInt(normalized.slice(4, 6), 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+function normalizeAlumniCareerTrack(value) {
+  if (!value || typeof value !== "string") {
+    return null;
+  }
+
+  const normalized = value.trim().toLowerCase();
+  if (
+    normalized === "academia" ||
+    normalized === "academic" ||
+    normalized === "faculty" ||
+    normalized === "university"
+  ) {
+    return "academia";
+  }
+  if (
+    normalized === "graduate" ||
+    normalized === "study" ||
+    normalized === "graduate study" ||
+    normalized === "further study" ||
+    normalized === "higher education"
+  ) {
+    return "graduate";
+  }
+  if (
+    normalized === "research" ||
+    normalized === "research institute" ||
+    normalized === "research sector" ||
+    normalized === "institute"
+  ) {
+    return "research";
+  }
+  if (
+    normalized === "industry" ||
+    normalized === "company" ||
+    normalized === "corporate" ||
+    normalized === "private sector"
+  ) {
+    return "industry";
+  }
+  if (
+    normalized === "exploring" ||
+    normalized === "in transition" ||
+    normalized === "open" ||
+    normalized === "unknown" ||
+    normalized === "unspecified" ||
+    normalized === "tbd"
+  ) {
+    return "exploring";
+  }
+  return null;
+}
+
+function inferAlumniCareerTrack(member) {
+  const explicitTrack =
+    normalizeAlumniCareerTrack(member.careerTrack) ||
+    normalizeAlumniCareerTrack(member.currentTrack) ||
+    normalizeAlumniCareerTrack(member.currentCategory);
+  if (explicitTrack) {
+    return explicitTrack;
+  }
+  return getManualCareerTrackByName(member.name) || "exploring";
+}
+
+function getAlumniCareerTrackStats(alumniMembers) {
+  const counts = alumniCareerTrackOrder.reduce((accumulator, key) => {
+    accumulator[key] = 0;
+    return accumulator;
+  }, {});
+
+  alumniMembers.forEach((member) => {
+    const key = inferAlumniCareerTrack(member);
+    counts[key] += 1;
+  });
+
+  return alumniCareerTrackOrder.map((key) => ({
+    ...alumniCareerTrackConfig[key],
+    count: counts[key]
+  }));
+}
 
 function renderHighlightedText(text, highlights) {
   const safeText = text || "";
@@ -63,6 +215,11 @@ function renderHighlightedText(text, highlights) {
   }
 
   return highlighted;
+}
+
+function formatPeopleCount(count) {
+  const safeCount = Number.isFinite(count) ? count : 0;
+  return `${safeCount} ${safeCount === 1 ? "person" : "people"}`;
 }
 
 function parseYearMonth(value) {
@@ -126,9 +283,11 @@ export default function MembersSectionPage({ view = "current" }) {
     ...member,
     _sourceIndex: index
   }));
-  const isAlumniView = view === "alumni";
+  const isAlumniTestView = view === "alumni_test";
+  const isAlumniView = view === "alumni" || isAlumniTestView;
+  const isAlumniLikeView = isAlumniView;
   const pageTitle = isAlumniView ? "Alumni" : "Current Members";
-  const sectionOrder = isAlumniView ? alumniSectionOrder : currentSectionOrder;
+  const sectionOrder = isAlumniLikeView ? alumniSectionOrder : currentSectionOrder;
 
   const grouped = sectionOrder.map((section) => {
     const filtered = indexedMembers.filter((member) => section.keys.includes(member.category));
@@ -137,6 +296,13 @@ export default function MembersSectionPage({ view = "current" }) {
       members: section.id === "alumni" ? sortAlumniByRecent(filtered) : filtered
     };
   });
+  const alumniMembers = grouped.find((section) => section.id === "alumni")?.members || [];
+  const alumniCareerStats = isAlumniView ? getAlumniCareerTrackStats(alumniMembers) : [];
+  const alumniCareerTotal = alumniCareerStats.reduce((sum, item) => sum + item.count, 0);
+  const alumniCareerStatsWithShare = alumniCareerStats.map((item) => ({
+    ...item,
+    share: alumniCareerTotal ? (item.count / alumniCareerTotal) * 100 : 0
+  }));
 
   return (
     <div>
@@ -144,26 +310,76 @@ export default function MembersSectionPage({ view = "current" }) {
         <div className="sectionHeader">
           <h1>{pageTitle}</h1>
           <div className="publicationFilter">
-            <a
-              href={withBasePath("/members/current")}
-              className={`publicationFilterButton ${!isAlumniView ? "isActive" : ""}`}
+            <Link
+              href="/members/current"
+              className={`publicationFilterButton ${!isAlumniLikeView ? "isActive" : ""}`}
             >
               Current Members
-            </a>
-            <a
-              href={withBasePath("/members/alumni")}
+            </Link>
+            <Link
+              href="/members/alumni"
               className={`publicationFilterButton ${isAlumniView ? "isActive" : ""}`}
             >
               Alumni
-            </a>
+            </Link>
           </div>
         </div>
       </section>
 
+      {isAlumniView ? (
+        <section className="section">
+          <div className="card alumniCareerPanel">
+            <div className="alumniCareerHeading">
+              <div className="alumniCareerTopRow">
+                <h2 className="alumniCareerTitle">Alumni Career Snapshot</h2>
+                <div className="alumniCareerTotalPill" aria-label="Total alumni">
+                  <span className="alumniCareerTotalLabel">Total Alumni</span>
+                  <strong className="alumniCareerTotalValue">{alumniCareerTotal}</strong>
+                </div>
+              </div>
+            </div>
+            <div
+              className="alumniCareerBar"
+              role="img"
+              aria-label={`Career distribution for ${alumniCareerTotal} alumni`}
+            >
+              {alumniCareerStatsWithShare.map((item) => (
+                <span
+                  key={item.key}
+                  className="alumniCareerBarSegment"
+                  style={{ width: `${item.share}%`, backgroundColor: item.color }}
+                />
+              ))}
+            </div>
+            <ul className="alumniCareerStats">
+              {alumniCareerStatsWithShare.map((item) => (
+                <li key={item.key} className="alumniCareerStat">
+                  <span className="alumniCareerStatLabelWrap">
+                    <span
+                      className="alumniCareerLegendDot"
+                      style={{ backgroundColor: item.color }}
+                      aria-hidden="true"
+                    />
+                    <span className="alumniCareerStatLabel">{item.label}</span>
+                  </span>
+                  <span className="alumniCareerStatMeta">
+                    <span className="alumniCareerStatCount">{formatPeopleCount(item.count)}</span>
+                    <span className="alumniCareerStatMetaDivider" aria-hidden="true">
+                      |
+                    </span>
+                    <span className="alumniCareerStatPercent">{item.share.toFixed(1)}%</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
+
       {grouped.map((section) =>
         section.members.length ? (
           <section className="section" key={section.id}>
-            {!isAlumniView ? <h2>{section.label}</h2> : null}
+            {!isAlumniLikeView ? <h2>{section.label}</h2> : null}
             <div className="grid membersGrid membersGrid--twoCol">
               {section.members.map((m, idx) => {
                 const detailsId = `${section.id}-${idx}`;
@@ -182,6 +398,11 @@ export default function MembersSectionPage({ view = "current" }) {
                   hasApplicationDetails ||
                   hasOutcomes;
                 const scholarUrl = m.scholar_url || m.scholar || m.google_scholar;
+                const careerTrackKey = isAlumniView ? inferAlumniCareerTrack(m) : null;
+                const careerTrack =
+                  careerTrackKey && alumniCareerTrackConfig[careerTrackKey]
+                    ? alumniCareerTrackConfig[careerTrackKey]
+                    : null;
 
                 return (
                   <Card key={m.name}>
@@ -253,9 +474,27 @@ export default function MembersSectionPage({ view = "current" }) {
                     </div>
                     <div className="memberCardContent memberCardContent--details">
                       <div className="memberPhoto">
-                        <img src={withBasePath(m.photo)} alt={m.name} />
+                        <img src={withBasePath(m.photo)} alt={m.name} loading="lazy" decoding="async" />
                       </div>
                       <div className="memberInfo">
+                        {careerTrack ? (
+                          <span
+                            className="memberCareerBadge"
+                            style={{
+                              "--career-track-color": careerTrack.color,
+                              "--career-track-text": careerTrack.color,
+                              "--career-track-bg": hexToRgba(careerTrack.color, 0.32),
+                              "--career-track-border": hexToRgba(careerTrack.color, 0.62)
+                            }}
+                          >
+                            <span
+                              className="memberCareerBadgeDot"
+                              style={{ backgroundColor: careerTrack.color }}
+                              aria-hidden="true"
+                            />
+                            <span>Career Track: {careerTrack.label}</span>
+                          </span>
+                        ) : null}
                         <ul className="memberSummaryList">
                           {m.category !== "Alumni" && m.role ? <li>{m.role}</li> : null}
                           {summaryTags
@@ -390,3 +629,4 @@ export default function MembersSectionPage({ view = "current" }) {
     </div>
   );
 }
+

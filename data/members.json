@@ -231,7 +231,7 @@
                         ]
     },
     {
-        "name":  "Junhyuk Kang",
+        "name":  "Jun Hyuk Kang",
         "category":  "Alumni",
         "role":  "M.S.",
         "affiliation":  "Energy Systems Research, Ajou University",
@@ -423,28 +423,6 @@
                         ],
         "methodology":  [
                             "DFT"
-                        ]
-    },
-    {
-        "name":  "Jaehwang Kim",
-        "category":  "Undergrad",
-        "role":  "Undergraduate Research Intern",
-        "affiliation":  "Materials Science and Engineering, Ajou University",
-        "email":  "jaehwang3183@ajou.ac.kr",
-        "photo":  "/images/members/jaehwang_kim.jpg",
-        "education":  [
-                          "2021.03 - Present: B.S. student, Materials Science and Engineering, Ajou University"
-                      ],
-        "research":  [
-                         "High-Entropy Materials Synthesis Recipe Generator"
-                     ],
-        "application":  "High-Entropy Materials Synthesis Recipe Generator",
-        "applicationDetails":  [
-                                   "High-Entropy Materials Synthesis Recipe Generator"
-                               ],
-        "applicationLabel":  "Research Interests",
-        "summaryTags":  [
-                            "LLM"
                         ]
     },
     {

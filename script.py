@@ -218,20 +218,6 @@ members = [
     ]
   },
   {
-    "name": "Jaehwang Kim",
-    "category": "Undergrad",
-    "role": "Undergraduate Research Assistant",
-    "affiliation": "Advanced Materials Science and Engineering, Ajou University",
-    "email": "jaehwang3183@ajou.ac.kr",
-    "photo": "/images/placeholder.svg",
-    "education": [
-      "B.S., Advanced Materials Science and Engineering, Ajou University"
-    ],
-    "research": [
-      "NLP for materials science."
-    ]
-  },
-  {
     "name": "Jaeseon Yoo",
     "category": "Undergrad",
     "role": "Undergraduate Research Assistant",

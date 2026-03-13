@@ -56,7 +56,7 @@ export default function Members2Page() {
                   </div>
                   <div className="memberCardContent">
                     <div className="memberPhoto">
-                      <img src={withBasePath(m.photo)} alt={m.name} />
+                      <img src={withBasePath(m.photo)} alt={m.name} loading="lazy" decoding="async" />
                     </div>
                     <div className="memberInfo">
                       {m.education && (

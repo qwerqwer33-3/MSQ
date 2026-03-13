@@ -96,6 +96,8 @@ export default function ActivitiesPage() {
                       src={withBasePath(currentImage)}
                       alt={`${e.title} ${currentIdx + 1}`}
                       className="activityImage"
+                      loading="lazy"
+                      decoding="async"
                     />
                   ) : null}
                   {showArrows ? (
@@ -157,6 +159,8 @@ export default function ActivitiesPage() {
                   src={withBasePath(activeImage)}
                   alt={`${activeItem.title} ${modalIndex + 1}`}
                   className="activityImage"
+                  loading="eager"
+                  decoding="sync"
                 />
               ) : null}
               {activeImages.length > 1 ? (

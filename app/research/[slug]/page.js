@@ -1,4 +1,5 @@
 import research from "../../../data/research.json";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { withBasePath } from "../../../lib/basePath";
 
@@ -54,9 +55,9 @@ export default function ResearchDetailPage({ params }) {
       <section className="section">
         <div className="sectionHeader researchDetailHero">
           <p className="sectionDescription">
-            <a className="researchBackLink" href={withBasePath("/research")}>
+            <Link className="researchBackLink" href="/research">
               {"\u2190 Back to Topics"}
-            </a>
+            </Link>
           </p>
           <p className="researchKicker">Research Topic</p>
           <h1>{topic.title}</h1>
@@ -67,7 +68,7 @@ export default function ResearchDetailPage({ params }) {
       <section className="section">
         <div className="researchDetailGrid">
           <div className="researchTopicImage researchDetailMedia">
-            <img src={withBasePath(topic.image)} alt={topic.title} />
+            <img src={withBasePath(topic.image)} alt={topic.title} loading="eager" decoding="async" />
           </div>
           <div className="researchDetailCard">
             <h2>Details</h2>

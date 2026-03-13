@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const bodyBackground = `url(${withBasePath("/Back.png")})`;
+  const bodyBackground = `url(${withBasePath("/Back.opt.jpg")})`;
 
   return (
     <html lang="en">
