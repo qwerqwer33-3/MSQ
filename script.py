@@ -63,7 +63,7 @@ members = [
     ]
   },
   {
-    "name": "Juhyun Ha",
+    "name": "Ju Hyeon Ha",
     "category": "Integrated Ph.D.",
     "role": "Integrated Ph.D. Candidate",
     "affiliation": "Energy Systems Research, Ajou University",
