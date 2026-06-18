@@ -1,11 +1,25 @@
 const newsItems = [
   {
-    id: "2026-03-renewal",
-    date: "2026-03-01",
+    id: "2026-09-renewal",
+    date: "2026-09-01",
+    sortOrder: 0,
     title: "Homepage Renewal",
-    text: "MSQ Lab homepage was renewed in March 2026."
+    text: "MSQ Lab homepage was renewed in September 2026."
+  },
+  {
+    id: "2026-09-sungkyunkwan",
+    date: "2026-09-01",
+    sortOrder: 10,
+    title: "A New Chapter at Sungkyunkwan University",
+    text: "A new chapter begins: M-Square Laboratory takes off at Sungkyunkwan University. The journey has just begun."
   }
 ];
+
+const sortedNewsItems = [...newsItems].sort((a, b) => {
+  const dateOrder = b.date.localeCompare(a.date);
+  if (dateOrder !== 0) return dateOrder;
+  return (a.sortOrder ?? 50) - (b.sortOrder ?? 50);
+});
 
 function formatDate(date) {
   return date.replaceAll("-", ".");
@@ -19,9 +33,9 @@ export default function NewsPage() {
       </section>
 
       <section className="section newsSection">
-        <div className="card newsSimple">
-          {newsItems.map((item) => (
-            <article key={item.id} className="newsSimpleItem">
+        <div className="newsCardList">
+          {sortedNewsItems.map((item) => (
+            <article key={item.id} className="card newsSimpleItem newsSimpleCard">
               <p className="newsSimpleHead">
                 <span className="newsSimpleDate">{formatDate(item.date)}</span>
                 <span className="newsSimpleTitle">{item.title}</span>

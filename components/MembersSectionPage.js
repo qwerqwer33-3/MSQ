@@ -497,6 +497,7 @@ export default function MembersSectionPage({ view = "current" }) {
                         ) : null}
                         <ul className="memberSummaryList">
                           {m.category !== "Alumni" && m.role ? <li>{m.role}</li> : null}
+                          {m.category !== "Alumni" && m.affiliation ? <li>{m.affiliation}</li> : null}
                           {summaryTags
                             ? summaryTags.map((tag) => <li key={tag}>{tag}</li>)
                             : application
@@ -506,6 +507,9 @@ export default function MembersSectionPage({ view = "current" }) {
                             <li className="memberEmailInline">
                               <a href={`mailto:${m.email}`}>{m.email}</a>
                             </li>
+                          ) : null}
+                          {m.coAdvisor ? (
+                            <li>Co-advisor: {m.coAdvisor}</li>
                           ) : null}
                           {m.currentAffiliation ? (
                             <li>Current: {m.currentAffiliation}</li>

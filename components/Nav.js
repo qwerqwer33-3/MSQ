@@ -46,14 +46,14 @@ export default function Nav() {
       <div className="container navInner">
         <Link className="navBrand" href="/">
           <img
-            className="navLogo"
-            src={withBasePath("/logo-msq.svg")}
-            width="32"
-            height="32"
-            alt="MSQ Lab logo"
+            className="navLogo navLogoFull"
+            src={withBasePath("/LAB_logo.png")}
+            width="2804"
+            height="561"
+            alt="Materials Modeling Laboratory"
             decoding="async"
           />
-          <span>MSQ Lab</span>
+          <span className="navBrandText">MSQ Lab</span>
         </Link>
         <nav className="navLinks">
           {links.map((l) => (

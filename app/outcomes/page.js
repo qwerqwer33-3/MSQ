@@ -42,7 +42,7 @@ function renderAuthors(authors, keyPrefix, firstAuthors = [], correspondingAutho
     const norm = normalizeName(name);
     const isFirst = firstSet.has(norm);
     const isCorr = corrSet.has(norm);
-    const markers = `${isFirst ? "†" : ""}${isCorr ? "*" : ""}`;
+    const markers = `${isFirst ? "\u2020" : ""}${isCorr ? "*" : ""}`;
     const isHighlight = highlightNames.has(norm);
 
     return (

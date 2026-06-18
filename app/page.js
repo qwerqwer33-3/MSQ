@@ -1,13 +1,31 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { withBasePath } from "../lib/basePath";
+import activities from "../data/activities.json";
 import members from "../data/members.json";
+import research from "../data/research.json";
 
 const slides = [
   {
+    title: "AI-assisted Discovery",
+    description: "Data-driven workflows for synthesis recipe generation.",
+    image: "/images/Home/Research_3.opt.jpg"
+  },
+  {
+    title: "Multiscale Modeling",
+    description: "Linked atomistic, process, and device-scale simulations.",
+    image: "/images/Home/Research_1.opt.jpg"
+  },
+  {
+    title: "Nucleation Theory",
+    description: "Phase formation pathways and synthesis condition design.",
+    image: "/images/Research/nucleation-theory.png"
+  },
+  {
     title: "Battery Safety Modeling",
-    description: "Thermo-electro-mechanical coupling for runaway prevention.",
+    description: "Thermo-electro-mechanical coupling for safer energy systems.",
     image: "/images/Home/Research_1.opt.jpg"
   },
   {
@@ -16,67 +34,32 @@ const slides = [
     image: "/images/Home/Research_2.opt.jpg"
   },
   {
-    title: "AI-assisted Discovery",
-    description: "Machine-learned potentials accelerate screening.",
-    image: "/images/Home/Research_3.opt.jpg"
-  },
-  {
     title: "Process & Manufacturing",
     description: "Simulation-guided electrode and device fabrication.",
     image: "/images/Home/Research_4.opt.jpg"
-  },
-  {
-    title: "Multiphysics Devices",
-    description: "Coupled electro-thermal-mechanical device simulations.",
-    image: "/images/Home/Research_5.opt.jpg"
-  },
-  {
-    title: "Energy Harvesting Systems",
-    description: "Modeling low-power nodes from triboelectrics to thermoelectrics.",
-    image: "/images/Home/Research_6.opt.jpg"
   }
 ];
+
+const heroBackground = "/images/Home/msq-hero-generated.png";
 
 const focusGroups = [
   {
     key: "AI",
     label: "AI",
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="6.5" y="6.5" width="11" height="11" rx="2.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
-        <path
-          d="M9 3.6v2.2M12 3.6v2.2M15 3.6v2.2M9 18.2v2.2M12 18.2v2.2M15 18.2v2.2M3.6 9h2.2M3.6 12h2.2M3.6 15h2.2M18.2 9h2.2M18.2 12h2.2M18.2 15h2.2"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.45"
-          strokeLinecap="round"
-        />
-        <text x="12" y="14.1" textAnchor="middle" fontSize="4.8" fontWeight="700" fill="currentColor">AI</text>
-      </svg>
-    )
+    summary: "Data-driven materials discovery and synthesis recipe generation.",
+    icon: "AI"
   },
   {
     key: "Multi-scale",
     label: "Multi-scale",
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="3.3" y="5" width="17.4" height="3" rx="1.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
-        <rect x="5.2" y="10.5" width="13.6" height="3" rx="1.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
-        <rect x="7.1" y="16" width="9.8" height="3" rx="1.2" fill="none" stroke="currentColor" strokeWidth="1.6" />
-      </svg>
-    )
+    summary: "Linked first-principles, process, and device-scale simulations.",
+    icon: "MS"
   },
   {
     key: "Nucleation",
     label: "Nucleation",
-    icon: (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <ellipse cx="12" cy="12" rx="7.5" ry="3.4" fill="none" stroke="currentColor" strokeWidth="1.5" />
-        <ellipse cx="12" cy="12" rx="7.5" ry="3.4" transform="rotate(60 12 12)" fill="none" stroke="currentColor" strokeWidth="1.5" />
-        <ellipse cx="12" cy="12" rx="7.5" ry="3.4" transform="rotate(-60 12 12)" fill="none" stroke="currentColor" strokeWidth="1.5" />
-        <circle cx="12" cy="12" r="2" fill="currentColor" />
-      </svg>
-    )
+    summary: "Phase formation, reaction pathways, and synthesis condition design.",
+    icon: "NT"
   }
 ];
 
@@ -92,7 +75,6 @@ const memberOrder = [
   "Ji Hoon Hong",
   "Jimin Kim",
   "Jindong Hwang",
-  "Jaeseok Hwang",
   "Seojun Moon",
   "Sungjun Kim",
   "Jaeseon Yoo"
@@ -110,7 +92,6 @@ const memberTags = {
   "Ji Hoon Hong": ["DFT/MD", "AI"],
   "Jimin Kim": ["DFT/MD", "Nucleation"],
   "Jindong Hwang": ["DFT/MD", "AI"],
-  "Jaeseok Hwang": ["Multi-scale"],
   "Seojun Moon": ["DFT/MD", "Nucleation"],
   "Sungjun Kim": ["DFT/MD", "Nucleation"],
   "Jaeseon Yoo": ["DFT/MD", "Nucleation"]
@@ -129,6 +110,68 @@ const focusProfiles = focusGroups.map((group) => {
   return { ...group, people };
 });
 
+const latestNews = [
+  {
+    id: "2026-09-renewal",
+    date: "2026.09.01",
+    sortOrder: 0,
+    title: "Homepage Renewal",
+    text: "MSQ Lab homepage was renewed in September 2026."
+  },
+  {
+    id: "2026-09-sungkyunkwan",
+    date: "2026.09.01",
+    sortOrder: 10,
+    title: "A New Chapter at Sungkyunkwan University",
+    text: "M-Square Laboratory takes off at Sungkyunkwan University."
+  }
+];
+
+const sortedLatestNews = [...latestNews].sort((a, b) => {
+  const dateOrder = b.date.localeCompare(a.date);
+  if (dateOrder !== 0) return dateOrder;
+  return (a.sortOrder ?? 50) - (b.sortOrder ?? 50);
+});
+
+const researchBySlug = new Map(research.map((topic) => [topic.slug, topic]));
+
+const theoreticalHomeResearch = [
+  {
+    slug: "ai-assisted-synthesis-recipes"
+  },
+  {
+    slug: "multiscale-multiphysics",
+    title: "Multiscale Modeling"
+  },
+  {
+    slug: "nucleation-theory"
+  }
+].map((item) => {
+  const topic = researchBySlug.get(item.slug);
+  if (!topic) return null;
+
+  return {
+    ...topic,
+    title: item.title || topic.title,
+    href: `/research/${topic.slug}`,
+    session: "Theoretical Session"
+  };
+}).filter(Boolean);
+
+const homeResearchAreas = theoreticalHomeResearch;
+
+function formatActivityDate(value) {
+  const [year, month, day] = value.split("-");
+  return `${year}.${month}.${day}`;
+}
+
+function getActivityImage(item) {
+  if (Array.isArray(item.images) && item.images.length) {
+    return item.images[0];
+  }
+  return item.image || null;
+}
+
 export default function HomePage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
@@ -145,6 +188,11 @@ export default function HomePage() {
     () => slides.map((slide, index) => ({ ...slide, shouldLoad: loadedSlideIndexes.has(index) })),
     [loadedSlideIndexes]
   );
+  const latestActivities = useMemo(
+    () => [...activities].sort((a, b) => (a.date < b.date ? 1 : -1)).slice(0, 3),
+    []
+  );
+  const featuredResearch = homeResearchAreas;
 
   const goPrev = () => {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
@@ -191,14 +239,14 @@ export default function HomePage() {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.18 }
     );
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div>
+    <div className="homePage">
       {showWelcome ? (
         <div
           className="welcomeOverlay"
@@ -214,24 +262,46 @@ export default function HomePage() {
               aria-label="Close welcome message"
               onClick={() => setShowWelcome(false)}
             >
-              ×
+              x
             </button>
             <h2>Welcome</h2>
             <p>
-              Welcome to our research team. We address industry and academic challenges across semiconductors,
-              batteries, and other advanced fields by applying multiscale and multiphysics modeling to a wide
-              range of materials, processes, and device systems.
+              Welcome to M-Square Laboratory. We study advanced materials, devices, and energy
+              systems through AI-guided discovery, multiscale simulation, and nucleation-aware
+              process modeling.
             </p>
           </div>
         </div>
       ) : null}
-      <section className="section hero">
-        <div className="heroText">
-          <h1 className="heroTitle">M-Square Laboratory</h1>
-          <p className="heroSubtitle">Materials Modeling Laboratory</p>
-          <p className="heroTagline">Simulating advanced materials, devices, and energy systems.</p>
+
+      <section className="section hero homeHero">
+        <div className="homeHeroBackdrop" aria-hidden="true">
+          <img src={withBasePath(heroBackground)} alt="" />
         </div>
-        <div className="heroSliderBox">
+        <div className="homeHeroVeil" aria-hidden="true" />
+        <div className="homeHeroCopy reveal-on-scroll">
+          <p className="homeEyebrow">Sungkyunkwan University Materials Modeling Laboratory</p>
+          <h1 className="heroTitle">M-Square Laboratory</h1>
+          <div className="homeHeroSignal">
+            <span>AI-Guided Discovery</span>
+            <span>Multiscale Modeling</span>
+            <span>Nucleation Theory</span>
+          </div>
+          <p className="heroSubtitle">
+            AI-guided discovery, multiscale simulation, and nucleation-aware process modeling for
+            advanced materials and devices.
+          </p>
+          <div className="homeHeroActions" aria-label="Primary links">
+            <Link className="homeButton homeButtonPrimary" href="/research">
+              Explore Research
+            </Link>
+            <Link className="homeButton homeButtonSecondary" href="/members/current">
+              Meet the Team
+            </Link>
+          </div>
+        </div>
+
+        <div className="homeHeroMedia reveal-on-scroll">
           <div className="heroSlider">
             <div className="sliderView">
               <div className="sliderOverlay">
@@ -274,26 +344,26 @@ export default function HomePage() {
               </div>
               <div className="sliderTrack">
                 {loadedSlides.map((slide, index) => {
-                  // Ensure direct dot/arrow jumps never render an empty active slide.
                   const shouldLoad = slide.shouldLoad || index === currentIndex;
                   const isPrioritySlide = index === 0 || index === currentIndex;
                   return (
-                  <div
-                    className={`slide${index === currentIndex ? " isActive" : ""}`}
-                    key={slide.title}
-                  >
-                    {shouldLoad ? (
-                      <img
-                        src={withBasePath(slide.image)}
-                        alt={slide.title}
-                        loading={isPrioritySlide ? "eager" : "lazy"}
-                        decoding="async"
-                        fetchPriority={isPrioritySlide ? "high" : "auto"}
-                      />
-                    ) : null}
-                  </div>
+                    <div className={`slide${index === currentIndex ? " isActive" : ""}`} key={slide.title}>
+                      {shouldLoad ? (
+                        <img
+                          src={withBasePath(slide.image)}
+                          alt={slide.title}
+                          loading={isPrioritySlide ? "eager" : "lazy"}
+                          decoding="async"
+                          fetchPriority={isPrioritySlide ? "high" : "auto"}
+                        />
+                      ) : null}
+                    </div>
                   );
                 })}
+              </div>
+              <div className="homeSlideCaption">
+                <strong>{slides[currentIndex].title}</strong>
+                <span>{slides[currentIndex].description}</span>
               </div>
             </div>
             <div className="sliderDots" aria-label="Slideshow pagination">
@@ -311,8 +381,54 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <section className="section homeIntroSection reveal-on-scroll">
+        <div className="homeIntroText">
+          <p className="homeEyebrow">What we do</p>
+          <h2>AI-guided materials design from multiscale mechanisms to nucleation-aware processes.</h2>
+        </div>
+        <p className="homeIntroBody">
+          MSQ Lab connects machine learning, multiscale simulation, and nucleation-centered modeling
+          to understand materials behavior and guide better design decisions in electronics,
+          energy storage, synthesis, and manufacturing.
+        </p>
+      </section>
+
+      <section className="section homeResearchSection">
+        <div className="sectionHeader reveal-on-scroll">
+          <p className="homeEyebrow">Research</p>
+          <h2>Research Areas</h2>
+          <p className="sectionDescription">
+            A compact preview of the AI, multiscale, and nucleation tracks behind the lab's current projects.
+          </p>
+        </div>
+        <div className="homeResearchGrid">
+          {featuredResearch.map((topic, index) => (
+            <Link
+              className="homeResearchCard reveal-on-scroll"
+              href={topic.href}
+              key={`${topic.session}-${topic.title}`}
+              style={{ transitionDelay: `${index * 70}ms` }}
+            >
+              <div className="homeResearchImage">
+                <img src={withBasePath(topic.image)} alt={topic.title} loading="lazy" decoding="async" />
+              </div>
+              <div className="homeResearchCopy">
+                <div className="homeResearchMeta">
+                  <span className="homeResearchIndex">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="homeResearchSession">{topic.session}</span>
+                </div>
+                <h3>{topic.title}</h3>
+                <p>{topic.description}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <section className="section homeFocusSection">
         <div className="sectionHeader reveal-on-scroll">
+          <p className="homeEyebrow">People</p>
           <h2>Research Groups</h2>
           <p className="sectionDescription">Students grouped by core modeling approach.</p>
         </div>
@@ -327,10 +443,13 @@ export default function HomePage() {
                 <span className="homeFocusIcon" aria-hidden="true">
                   {group.icon}
                 </span>
-                <h3 className="homeFocusTitle">{group.label}</h3>
+                <div>
+                  <h3 className="homeFocusTitle">{group.label}</h3>
+                  <p className="homeFocusSummary">{group.summary}</p>
+                </div>
               </div>
               <div className="homeFocusAvatars">
-                {group.people.map((person) => (
+                {group.people.slice(0, 6).map((person) => (
                   <div className="homeFocusAvatar" key={`${group.key}-${person.name}`}>
                     <img src={withBasePath(person.photo)} alt={person.name} loading="lazy" decoding="async" />
                   </div>
@@ -338,6 +457,53 @@ export default function HomePage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="section homeUpdatesSection">
+        <div className="homeUpdatesGrid">
+          <div className="homeUpdatePanel reveal-on-scroll">
+            <div className="sectionHeader">
+              <p className="homeEyebrow">News</p>
+              <h2>Latest News</h2>
+            </div>
+            <div className="homePublicationList">
+              {sortedLatestNews.map((item) => (
+                <Link
+                  className="homePublication"
+                  href="/news"
+                  key={item.id}
+                >
+                  <span>{item.date}</span>
+                  <strong>{item.title}</strong>
+                  <em>{item.text}</em>
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="homeUpdatePanel reveal-on-scroll">
+            <div className="sectionHeader">
+              <p className="homeEyebrow">Lab Life</p>
+              <h2>Latest Activities</h2>
+            </div>
+            <div className="homeActivityList">
+              {latestActivities.map((item) => {
+                const image = getActivityImage(item);
+                return (
+                  <Link className="homeActivity" href="/activities" key={`${item.date}-${item.title}`}>
+                    {image ? (
+                      <img src={withBasePath(image)} alt={item.title} loading="lazy" decoding="async" />
+                    ) : null}
+                    <span>
+                      <strong>{item.title}</strong>
+                      <em>{formatActivityDate(item.date)}</em>
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </section>
     </div>
