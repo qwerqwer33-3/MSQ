@@ -235,6 +235,8 @@
         "category":  "Alumni",
         "role":  "M.S.",
         "affiliation":  "Energy Systems Research, Ajou University",
+        "currentAffiliation":  "AICT",
+        "careerTrack":  "research",
         "alumniSince":  "2026-02",
         "email":  "rkdwnsgur1@ajou.ac.kr",
         "photo":  "/images/members/junhyuk_kang.jpg",
@@ -462,7 +464,10 @@
         "role":  "Senior Researcher",
         "affiliation":  "KICET",
         "currentAffiliation":  "KICET (Senior Researcher)",
+        "careerTrack":  "academia",
         "email":  "hko@kicet.re.kr",
+        "scholar_url":  "https://scholar.google.com/citations?user=sRlg1osAAAAJ&hl=en",
+        "website":  "https://sites.google.com/view/matsolve-kicet/home",
         "photo":  "/images/members/hyunseok_ko.jpg",
         "education":  [
                           "Ph.D., Materials Science and Engineering, University of Wisconsin-Madison (Advisor: Dane Morgan)"
@@ -481,7 +486,8 @@
         "role":  "Researcher",
         "affiliation":  "Imperial College London",
         "currentAffiliation":  "Imperial College London",
-        "email":  "gfatti@kicet.re.kr",
+        "email":  "g.fatti18@imperial.ac.uk",
+        "scholar_url":  "https://scholar.google.com/citations?user=HNOpDq8AAAAJ&hl=en",
         "photo":  "/images/members/giulio_fatti.png",
         "education":  [
                           "Ph.D., Physics, University of Modena and Reggio Emilia (Advisor: Maria Clelia Righi)"
@@ -502,7 +508,7 @@
         "role":  "Researcher",
         "affiliation":  "Institute of Physics, Belgrade, Serbia",
         "currentAffiliation":  "Senior Research Associate, Institute of Physics, Belgrade, Serbia",
-        "email":  "upendrakumar@kicet.re.kr",
+        "careerTrack":  "academia",
         "photo":  "/images/members/upendra_kumar.png",
         "education":  [
                           "Ph.D., Physics, Indian Institute of Technology Guwahati (Advisor: S. Setlur)"
@@ -540,7 +546,6 @@
         "role":  "Researcher",
         "affiliation":  "ASML",
         "currentAffiliation":  "ASML",
-        "email":  "10004oksm@kicet.re.kr",
         "photo":  "/images/members/sangmin_jeong.jpg",
         "education":  [
                           "M.S., Physics, Hanyang University (Advisor: Junhyung Cho)"
@@ -559,7 +564,6 @@
         "role":  "Researcher",
         "affiliation":  "Self-employed cryptocurrency trader",
         "currentAffiliation":  "Self-employed cryptocurrency trader",
-        "email":  "tkdrn0510@kicet.re.kr",
         "photo":  "/images/members/sanggu_lee.jpg",
         "education":  [
                           "B.S., Materials Science and Engineering, Yeungnam University"

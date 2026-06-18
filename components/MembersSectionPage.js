@@ -52,11 +52,11 @@ const alumniCareerTrackConfig = {
 const alumniCareerTrackOrder = ["academia", "research", "graduate", "industry", "exploring"];
 
 const alumniCareerTrackManualByName = {
-  "Junhyuk Kang": "industry",
-  "Jun Hyuk Kang": "industry",
-  "Hyunseok Ko": "research",
+  "Junhyuk Kang": "research",
+  "Jun Hyuk Kang": "research",
+  "Hyunseok Ko": "academia",
   "Giulio Fatti": "academia",
-  "Upendra Kumar": "research",
+  "Upendra Kumar": "academia",
   "Donggeon Lee": "industry",
   "Sangmin Jeong": "industry",
   "Sanggu Lee": "industry",
